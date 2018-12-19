@@ -845,7 +845,7 @@
 		rotatrArrow(rotateTrigger[i],arrows[i]);
 	}
 	
-	//UI切换
+
 	var nodeDefaultUI = localStorage.getItem("tempUInode");
 	var elNodeCard = $(".ui-card-wrap");
 	var elNodeTable = $(".node-table");
