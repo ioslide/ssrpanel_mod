@@ -20,10 +20,7 @@
 				</div>
 				<div class="ui-card-wrap">
 					<div class="row">
-					
 						<div class="col-xx-12 col-sm-6">
-						
-						
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner">
