@@ -1,14 +1,12 @@
  {include file='header.tpl'}
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  
 <body>
     <div class="authpage">
     <div id="back">
     <div class="backRight"></div>
     <div class="backLeft"></div>
     </div>
-
     <div id="slideBox">
         <div class="topLayer">
                 <div class="left">
