@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+ <head> 
   <meta charset="utf-8" class="next-head" />
   <title>{$config["appName"]}</title>
   <link rel="preload" href="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\index.js" as="script" />
@@ -72,7 +72,7 @@
   <script async="" id="__NEXT_PAGE__/" src="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\index.js"></script>
   <script async="" id="__NEXT_PAGE__/_app" src="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\_app.js"></script>
   <script async="" id="__NEXT_PAGE__/_error" src="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\_error.js"></script>
-  <script src="_next\static\commons\main-1f7d66c1d1038b934730.js" async=""></script>
+  <script src="_next\static\commons\main-1f7d66c1d1038b934730.js" async=""></script> 
   <script src="https://unpkg.com/delayed-scroll-restoration-polyfill@0.1.1/index.js"></script>
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
  </body>
