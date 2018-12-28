@@ -1,17 +1,5 @@
 
-
-
-
-
-
 {include file='admin/main.tpl'}
-
-
-
-
-
-
-
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
