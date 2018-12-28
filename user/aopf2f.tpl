@@ -77,5 +77,4 @@
         });
         tid = setTimeout(f, 1000); //循环调用触发setTimeout
     }
-
 </script>
