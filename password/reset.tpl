@@ -1,10 +1,7 @@
 {include file='header.tpl'}
-
-
 			<!-- 新的 -->
 			<div class="authpage">
 				<div class="container">
-					
 						<div class="auth-main auth-row auth-col-one">
 							<div class="auth-top auth-row">
 								<a class="boardtop-left" href="/">
@@ -46,10 +43,7 @@
 					</div>
 				</div>
 			</div>
-										
-								
 						{include file='dialog.tpl'}
-						
 						<div aria-hidden="true" class="modal modal-va-middle fade" id="email_nrcy_modal" role="dialog" tabindex="-1">
 							<div class="modal-dialog">
 								<div class="modal-content">
@@ -67,12 +61,7 @@
 								</div>
 							</div>
 						</div>
-						
-					
-	
 {include file='footer.tpl'}
-
-
 <script>
     $(document).ready(function(){
         function reset(){

@@ -1,7 +1,4 @@
-
 {include file='header.tpl'}
-
-
 <!-- 新的 -->
 <div class="authpage">
 		<div class="container">
