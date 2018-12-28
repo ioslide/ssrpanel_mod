@@ -8,7 +8,6 @@
     <div class="backRight"></div>
     <div class="backLeft"></div>
     </div>
-
     <div id="slideBox">
         <div class="topLayer">
                 <div class="left">
