@@ -1,12 +1,14 @@
- {include file='header.tpl'}
+{include file='header.tpl'}
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
 <body>
     <div class="authpage">
     <div id="back">
     <div class="backRight"></div>
     <div class="backLeft"></div>
     </div>
+
     <div id="slideBox">
         <div class="topLayer">
                 <div class="left">
@@ -29,25 +31,7 @@
                                             <label for="repasswd">Repeat</label>
                                             <input id="repasswd" type="password" class="space-t">
                                         </div>
-                                        <div class="rowtocol">
-                                            <div class="auth-row">
-                                                <div class="form-group form-group-label dropdown">
-                                                    <label class="floating-label" for="imtype">Choose your contact information</label>
-                                                    <button class="form-group-control maxwidth-auth" id="imtype" data-toggle="dropdown">
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="imtype">
-                                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="1" data="imtype">Wechat</a></li>
-                                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="2" data="imtype">QQ</a></li>
-                                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="3" data="imtype">Facebook</a></li>
-                                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="4" data="imtype">Telegram</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>	
-                                        <div class="form-group">
-                                            <label for="wechat">Liaison account</label>
-                                            <input id="wechat" type="text">
-                                        </div>
+
 
                                     {if $geetest_html != null}
                                                 <div class="rowtocol">
@@ -64,7 +48,7 @@
                                                 </div>
 									{/if}
                                     <button id="goLeft" class="off">Login</button>
-                                    <button id="tos" type="submit">Sign up</button>   
+                                    <button type="submit" id="tos" >Sign up</button>   
 
                                 
                     </div>
@@ -84,13 +68,15 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-remember" for="remember_me">
-                                <input type="checkbox" id="remember_me" />Remember
+                                <input type="checkbox" id="remember_me" value="week" name="remember_me"/>Remember
                                 </label>
                                 <a class="form-recovery" href="/password/reset">Forgot Password?</a>
                             </div> 
                             <button id="goRight" class="off" >Sign Up</button>
                             <button id="registerr" class="off" onclick="window.location='/auth/register'">Sign Up</button>
-                            <button id="login" type="submit">Login</button>
+                            <button type="submit" id="TencentCaptcha"
+                            data-appid="2020752806"
+                            data-cbfn="callback">Login</button>
                         </form>
                     </div>
                 </div>
@@ -116,25 +102,7 @@
 				</div>
 			</div>
 	</div>
-		
-    <div aria-hidden="true" class="modal modal-va-middle fade" id="email_nrcy_modal" role="dialog" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-heading">
-                            <h2 class="modal-title">Can't receive the verification code?</h2>
-                        </div>
-                        <div class="modal-inner">
-                            {include file='email_nrcy.tpl'}
-                        </div>
-                        <div class="modal-footer">
-                            <p class="text-right">
-                                <button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button">Get</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-    </div>		
-
+	
     <div class="tiphidden"></div>
 </body>
 
@@ -199,8 +167,8 @@
             code = getCookie('code');
             }
             {/if}
-                document.getElementById("tos").disabled = true;
 
+                document.getElementById("tos").disabled = true;
                 $.ajax({
                     type:"POST",
                     url:"/auth/register",
@@ -210,12 +178,11 @@
                         name: $("#name").val(),
                         passwd: $("#rpasswd").val(),
                         repasswd: $("#repasswd").val(),
-                        wechat: $("#wechat").val(),{if $recaptcha_sitekey != null}
+                        wechat: Math.floor(Math.random()*10),
+                        {if $recaptcha_sitekey != null}
                         recaptcha: grecaptcha.getResponse(),{/if}
-                        imtype: $("#imtype").val(),
-                        code:code{if $enable_email_verify == 'true'},
-                        emailcode: $("#email_code").val()
-                        {/if}
+                        imtype: 'weixin',
+                        code:code,
                   		{if $geetest_html != null},
                         geetest_challenge: validate.geetest_challenge,
                         geetest_validate: validate.geetest_validate,
@@ -239,13 +206,13 @@
                         }
                     },
                     error:function(jqXHR){
-                $("#msg-error").hide(10);
-                $("#msg-error").show(100);
-                $("#msg-error-p").html("发生错误："+jqXHR.status);
-                document.getElementById("tos").disabled = false;
-                {if $geetest_html != null}
-                captcha.refresh();
-                {/if}
+                        $("#msg-error").hide(10);
+                        $("#msg-error").show(100);
+                        $("#msg-error-p").html("发生错误："+jqXHR.status);
+                        document.getElementById("tos").disabled = false;
+                        {if $geetest_html != null}
+                        captcha.refresh();
+                        {/if}
                     }
                 });
             }
@@ -294,58 +261,6 @@
     </script>
 {/if}
 
-{if $enable_email_verify == 'true'}
-    <script>
-        var wait=60;
-        function time(o) {
-                if (wait == 0) {
-                    o.removeAttr("disabled");
-                    o.text("获取验证码");
-                    wait = 60;
-                } else {
-                    o.attr("disabled","disabled");
-                    o.text("重新发送(" + wait + ")");
-                    wait--;
-                    setTimeout(function() {
-                        time(o)
-                    },
-                    1000)
-                }
-            }
-
-
-
-        $(document).ready(function () {
-            $("#email_verify").click(function () {
-                time($("#email_verify"));
-
-                $.ajax({
-                    type: "POST",
-                    url: "send",
-                    dataType: "json",
-                    data: {
-                        email: $("#remail").val()
-                    },
-                    success: function (data) {
-                        if (data.ret) {
-                            $("#result").modal();
-                $("#msg").html(data.msg);
-
-                        } else {
-                            $("#result").modal();
-                $("#msg").html(data.msg);
-                        }
-                    },
-                    error: function (jqXHR) {
-                        $("#result").modal();
-                $("#msg").html(data.msg+"errors");
-                    }
-                })
-            })
-        })
-    </script>
-{/if}
-
 {if $geetest_html != null}
 	<script>
 		var handlerEmbed = function (captchaObj) {
@@ -379,17 +294,14 @@
                 $("#msg").html("Please slide the validation code to complete the validation.");
                 return;
             }
-
             if (!validate) {
                 $("#result").modal();
                 $("#msg").html("Please slide the validation code to complete the validation.");
                 return;
             }
-
             {/if}
-
-            document.getElementById("login").disabled = true;
-
+            document.getElementById("TencentCaptcha").disabled = true;
+            
             $.ajax({
                 type: "POST",
                 url: "/auth/login",
@@ -404,7 +316,8 @@
                     geetest_validate: validate.geetest_validate,
                     geetest_seccode: validate.geetest_seccode{/if}
                 },
-                success: function (data) {
+                success: 
+                function (data,res) {
                     if (data.ret == 1) {
                         $("#result").modal();
                         $("#msg").html(data.msg);
@@ -412,7 +325,7 @@
                     } else {
                         $("#result").modal();
                         $("#msg").html(data.msg);
-                        document.getElementById("login").disabled = false;
+                        document.getElementById("TencentCaptcha").disabled = false;
                         {if $geetest_html != null}
                         captcha.refresh();
                         {/if}
@@ -422,20 +335,19 @@
                     $("#msg-error").hide(10);
                     $("#msg-error").show(100);
                     $("#msg-error-p").html("error：" + jqXHR.status);
-                    document.getElementById("login").disabled = false;
+                    document.getElementById("TencentCaptcha").disabled = false;
                     {if $geetest_html != null}
                     captcha.refresh();
                     {/if}
                 }
             });
         }
-
         $("html").keydown(function (event) {
             if (event.keyCode == 13) {
                 login();
             }
         });
-        $("#login").click(function () {
+        $("#TencentCaptcha").click(function () {
             login();
         });
 

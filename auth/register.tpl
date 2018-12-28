@@ -1,3 +1,5 @@
+
+
  {include file='header.tpl'}
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -78,7 +80,19 @@
                                             <label for="wechat">Liaison account</label>
                                             <input id="wechat" type="text">
                                         </div>
+										{if $enable_email_verify == 'true'}
+										<div class="form-group form-group-label">
+											<div class="row">
+												<div class="col-md-10 col-md-push-1">
+													<label class="floating-label" for="email_code">邮箱验证码</label>
+													<input class="form-control" id="email_code" type="text" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">点击获取验证码</button>
+													<a href="" onclick="return false;" data-toggle='modal' data-target='#email_nrcy_modal'>收不到验证码？点击这里</a>
+												</div>
+											</div>
+										</div>
 
+										{/if}
                                     {if $geetest_html != null}
                                                 <div class="rowtocol">
                                                     <div class="form-group form-group-label">
