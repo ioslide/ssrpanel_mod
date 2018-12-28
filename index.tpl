@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- <head> 
+ <head>
   <meta charset="utf-8" class="next-head" />
   <title>{$config["appName"]}</title>
   <link rel="preload" href="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\index.js" as="script" />
