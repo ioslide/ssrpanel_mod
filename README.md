@@ -48,19 +48,19 @@ sed -i 's/,scandir//g' /usr/local/php/etc/php.ini
 ```html
 vi /usr/local/nginx/conf/vhost/yourdomain.conf
 ```
-Add this to the server
+  * Add this to the server
 ```html
 location / 
 {
 	try_files $uri $uri/ /index.php$is_args$args;		                
 }
 ```
-Modify the root line
+  * Modify the root line
 ```html
 root /home/wwwroot/yourdomain/public;
 ```
 
-Sample conf
+  * Sample conf
 ```html
 server
     {
@@ -148,8 +148,12 @@ Execute the crontab -e command and add the following five segments.
 ```
 
 ## Getting Help
-<a mailto="hello@ioslide.com">ioslide
-</a>
+
+<p align="left">
+	<a href="mailto:hello@ioslide.com">
+		<img src="https://github.com/ioslide/image/blob/master/xhylogo.svg" alt="xhy">
+	</a>
+</p>
 ## Contributing
 [ioslide](https://github.com/ioslide) 
 ## Preview-image
