@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://xhy.im">
-    <img width="200" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/%E4%B8%8B%E8%BD%BD.svg">
+    <img width="200" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/ssrlogo.png">
   </a>
 </p>
 <div align="center">
