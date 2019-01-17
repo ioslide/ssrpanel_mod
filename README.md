@@ -13,6 +13,39 @@
 ## What is ssrpanel_mod?
 
 ## Installation
+### Setting up the environment
+```html
+Centos 7
+```
+### Configuration environment
+```html
+install lnmp1.4
+```
+### Configuration environment
+Download and install the LNMP one-click installation package
+  *Add a virtual host to add ssl support as needed.
+```html
+yum install screen -y
+screen -S lnmp
+wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz
+cd lnmp1.4 && ./install.sh lnmp
+lnmp vhost add
+```
+  *Remove anti-cross directory removal tool
+This tool can quickly remove the anti-cross directory restrictions
+```html
+cd lnmp1.4/tools
+./remove_open_basedir_restriction.sh
+```
+When prompted, enter the virtual host directory /home/wwwroot/yourdomain
+press Enter to confirm.
+
+  *Remove anti-cross directory removal tool
+This tool can quickly remove the anti-cross directory restrictions
+```html
+cd lnmp1.4/tools
+./remove_open_basedir_restriction.sh
+```
 
 ## Documentation
 
