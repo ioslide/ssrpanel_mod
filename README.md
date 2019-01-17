@@ -40,11 +40,112 @@ cd lnmp1.4/tools
 When prompted, enter the virtual host directory /home/wwwroot/yourdomain
 press Enter to confirm.
 
-  *Remove anti-cross directory removal tool
-This tool can quickly remove the anti-cross directory restrictions
+  *Turn on the scandir() function
 ```html
-cd lnmp1.4/tools
-./remove_open_basedir_restriction.sh
+sed -i 's/,scandir//g' /usr/local/php/etc/php.ini
+```
+
+  *Modify conf
+```html
+vi /usr/local/nginx/conf/vhost/yourdomain.conf
+```
+Add this to the server
+```html
+location / 
+{
+	try_files $uri $uri/ /index.php$is_args$args;		                
+}
+```
+Modify the root line
+```html
+root /home/wwwroot/yourdomain/public;
+```
+
+Sample conf
+```html
+server
+    {
+        listen 80;
+        server_name yourdomain;
+        return 301 https://$host$request_uri;
+    }
+server
+    {
+        listen 443 ssl;
+        server_name yourdomain;
+        ssl_certificate /etc/letsencrypt/live/yourdomain/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/yourdomain/privkey.pem;
+        index index.html index.htm index.php default.html default.htm default.php;
+        root  /home/wwwroot/yourdomain/public;
+
+        include other.conf;
+        #error_page   404   /404.html;
+        include enable-php.conf;
+
+        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+        {
+            expires      30d;
+        }
+
+        location ~ .*\.(js|css)?$
+        {
+            expires      12h;
+        }
+location ~ /\.
+        {
+            deny all;
+        }
+location / {
+                        try_files $uri $uri/ /index.php$is_args$args;
+                }
+ access_log  /home/wwwlogs/yourdomain.log;
+```
+### Install panel program
+  *Download panel program
+```html
+cd /home/wwwroot/yourdomain
+yum install git -y
+git clone -b master https://github.com/ioslide/ssrpanel_mod.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
+chown -R root:root *
+chmod -R 755 *
+chown -R www:www storage
+php composer.phar install
+mv tool/alipay-f2fpay vendor/
+mv -f tool/autoload_classmap.php vendor/composer/
+```
+
+  *Configuration database
+Login database
+```html
+mysql -u root -p                                
+mysql>CREATE DATABASE database_name;            
+mysql>use database_name;                      
+mysql>source /home/wwwroot/你的域名/sql/all.sql  
+```
+  *Configuring sspanel
+  
+```html
+cd /home/wwwroot/你的域名
+cp config/.config.php.example config/.config.php
+vi config/.config.php
+lnmp restart
+```
+### Create an administrator and sync users
+```html
+php xcat createAdmin          //创建管理员
+php xcat syncusers            //同步用户
+php xcat initQQWry            //下载IP解析库
+php xcat resetTraffic         //重置流量
+```
+### Set up a scheduled task
+Execute the crontab -e command and add the following five segments.
+```html
+30 22 * * * php /home/wwwroot/your-site-folder/xcat sendDiaryMail 
+*/1 * * * * php /home/wwwroot/your-site-folder/xcat synclogin
+*/1 * * * * php /home/wwwroot/your-site-folder/xcat syncvpn
+0 0 * * * php -n /home/wwwroot/your-site-folder/xcat dailyjob
+*/1 * * * * php /home/wwwroot/your-site-folder/xcat checkjob    
+*/1 * * * * php -n /home/wwwroot/your-site-folder/xcat syncnas
 ```
 
 ## Documentation
