@@ -1,2 +1,3 @@
 # ssrpanel_mod
-还没有完工，请先不要下载安装，以免造成不必要的损失
+
+[![Build Status](https://travis-ci.org/philc/vimium.svg?branch=master)](https://travis-ci.org/philc/vimium)
