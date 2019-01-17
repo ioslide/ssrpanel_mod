@@ -37,14 +37,14 @@ A succinct, fast and elegant Airport
     <img width="150" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/open-in-broswer.svg">
   </a>
 </p>
+
 ### Setting up the environment
+
 ```html
 Centos 7
-```
-### Configuration environment
-```html
 install lnmp1.4
 ```
+
 ### Configuration environment
 Download and install the LNMP one-click installation package
   * Add a virtual host to add ssl support as needed.
