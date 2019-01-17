@@ -3,9 +3,8 @@
 [![Build Status](https://travis-ci.org/philc/vimium.svg?branch=master)](https://xhy.im)
 [![License](https://img.shields.io/npm/l/mithril.svg)](https://xhy.im/legal-notice/index.html)
 
-- [What is ssrpanel_mod?](#what-is-mithril)
+- [What is ssrpanel_mod?](#What-is-ssrpanel_mod)
 - [Installation](#installation)
-- [Documentation](#documentation)
 - [Getting Help](#getting-help)
 - [Contributing](#contributing)
 - [Preview-image](#preview-image)
@@ -23,7 +22,7 @@ install lnmp1.4
 ```
 ### Configuration environment
 Download and install the LNMP one-click installation package
-  *Add a virtual host to add ssl support as needed.
+  * Add a virtual host to add ssl support as needed.
 ```html
 yum install screen -y
 screen -S lnmp
@@ -31,7 +30,7 @@ wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz
 cd lnmp1.4 && ./install.sh lnmp
 lnmp vhost add
 ```
-  *Remove anti-cross directory removal tool
+  * Remove anti-cross directory removal tool
 This tool can quickly remove the anti-cross directory restrictions
 ```html
 cd lnmp1.4/tools
@@ -40,12 +39,12 @@ cd lnmp1.4/tools
 When prompted, enter the virtual host directory /home/wwwroot/yourdomain
 press Enter to confirm.
 
-  *Turn on the scandir() function
+  * Turn on the scandir() function
 ```html
 sed -i 's/,scandir//g' /usr/local/php/etc/php.ini
 ```
 
-  *Modify conf
+  * Modify conf
 ```html
 vi /usr/local/nginx/conf/vhost/yourdomain.conf
 ```
@@ -101,7 +100,7 @@ location / {
  access_log  /home/wwwlogs/yourdomain.log;
 ```
 ### Install panel program
-  *Download panel program
+  * Download panel program
 ```html
 cd /home/wwwroot/yourdomain
 yum install git -y
@@ -114,28 +113,28 @@ mv tool/alipay-f2fpay vendor/
 mv -f tool/autoload_classmap.php vendor/composer/
 ```
 
-  *Configuration database
+  * Configuration database
 Login database
 ```html
 mysql -u root -p                                
 mysql>CREATE DATABASE database_name;            
 mysql>use database_name;                      
-mysql>source /home/wwwroot/你的域名/sql/all.sql  
+mysql>source /home/wwwroot/yourdomain/sql/all.sql  
 ```
-  *Configuring sspanel
+  * Configuring sspanel
   
 ```html
-cd /home/wwwroot/你的域名
+cd /home/wwwroot/yourdomain
 cp config/.config.php.example config/.config.php
 vi config/.config.php
 lnmp restart
 ```
 ### Create an administrator and sync users
 ```html
-php xcat createAdmin          //创建管理员
-php xcat syncusers            //同步用户
-php xcat initQQWry            //下载IP解析库
-php xcat resetTraffic         //重置流量
+php xcat createAdmin          //Create an Administrator
+php xcat syncusers            //Synchronous user
+php xcat initQQWry            //Download IP parsing library
+php xcat resetTraffic         //Reset traffic
 ```
 ### Set up a scheduled task
 Execute the crontab -e command and add the following five segments.
@@ -148,12 +147,11 @@ Execute the crontab -e command and add the following five segments.
 */1 * * * * php -n /home/wwwroot/your-site-folder/xcat syncnas
 ```
 
-## Documentation
-
 ## Getting Help
-
+<a mailto="hello@ioslide.com">ioslide
+</a>
 ## Contributing
-
+[ioslide](https://github.com/ioslide) 
 ## Preview-image
 
 ![image](https://github.com/ioslide/image/blob/master/1.gif)
