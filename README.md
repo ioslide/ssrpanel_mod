@@ -10,7 +10,7 @@ ssrpanel_mod
 [![Build Status](https://travis-ci.org/philc/vimium.svg?branch=master)](https://xhy.im)
 [![License](https://img.shields.io/npm/l/mithril.svg)](https://xhy.im/legal-notice/index.html)
 [![downloads](http://img.shields.io/npm/dm/antd.svg?style=flat-square)](https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/)
-
+💎
 </div>
 
 English | [简体中文](./README-zh_CN.md)
@@ -28,9 +28,10 @@ English | [简体中文](./README-zh_CN.md)
 - [Contributing](#contributing)
 - [Preview-image](#preview-image)
 
-## Features
+## 🎨 Features
 
 ## 📦 Installation
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ant-design/ant-design-pro)
 ### Setting up the environment
 ```html
 Centos 7
@@ -177,7 +178,7 @@ Execute the crontab -e command and add the following five segments.
 ## ⌨️ Contributing
 [ioslide](https://github.com/ioslide) 
 
-## 🌍 Preview-image
+## 🚀 Preview-image
 
 ![image](https://github.com/ioslide/image/blob/master/1.gif)
 
