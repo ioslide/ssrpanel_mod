@@ -34,7 +34,7 @@ A succinct, fast and elegant Airport
 ## 📦 Installation
 <p align="left">
   <a href="#">
-    <img width="100" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/open-in-broswer.svg">
+    <img width="150" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/open-in-broswer.svg">
   </a>
 </p>
 ### Setting up the environment
