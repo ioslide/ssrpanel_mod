@@ -1,17 +1,33 @@
-# ssrpanel_mod
-
+<p align="center">
+  <a href="https://xhy.im">
+    <img width="200" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/%E4%B8%8B%E8%BD%BD.svg">
+  </a>
+</p>
+<div align="center">
+	ssrpanel_mod
 [![Build Status](https://travis-ci.org/philc/vimium.svg?branch=master)](https://xhy.im)
 [![License](https://img.shields.io/npm/l/mithril.svg)](https://xhy.im/legal-notice/index.html)
+[![downloads](http://img.shields.io/npm/dm/antd.svg?style=flat-square)](https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/)	
+</div>
 
-- [What is ssrpanel_mod?](#What-is-ssrpanel_mod)
+English | [简体中文](./README-zh_CN.md)
+
+## 🖥 Environment Support
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Electron |
+| --------- | --------- | --------- | --------- | --------- | --------- |
+| IE9, IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
+
+## 🔗 Links
+- [Features](#Features)
 - [Installation](#installation)
 - [Getting Help](#getting-help)
 - [Contributing](#contributing)
 - [Preview-image](#preview-image)
 
-## What is ssrpanel_mod?
+## Features
 
-## Installation
+## 📦 Installation
 ### Setting up the environment
 ```html
 Centos 7
@@ -147,7 +163,7 @@ Execute the crontab -e command and add the following five segments.
 */1 * * * * php -n /home/wwwroot/your-site-folder/xcat syncnas
 ```
 
-## Getting Help
+## 🔨 Getting Help
 
 <p align="left">
 	<a href="mailto:hello@ioslide.com">
@@ -155,10 +171,10 @@ Execute the crontab -e command and add the following five segments.
 	</a>
 </p>
 
-## Contributing
+## ⌨️ Contributing
 [ioslide](https://github.com/ioslide) 
 
-## Preview-image
+## 🌍 Preview-image
 
 ![image](https://github.com/ioslide/image/blob/master/1.gif)
 
