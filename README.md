@@ -32,7 +32,11 @@ English | [简体中文](./README-zh_CN.md)
 A succinct, fast and elegant Airport
 
 ## 📦 Installation
-[![Open in Gitpod](https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/open-in-broswer.svg)](#)
+<p align="left">
+  <a href="#">
+    <img width="200" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/open-in-broswer.svg">
+  </a>
+</p>
 ### Setting up the environment
 ```html
 Centos 7
