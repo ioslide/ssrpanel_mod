@@ -7,6 +7,7 @@
   <link rel="preload" href="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\_app.js" as="script" />
   <link rel="preload" href="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\_error.js" as="script" />
   <link rel="preload" href="_next\static\commons\main-1f7d66c1d1038b934730.js" as="script" />
+   <meta name="google-site-verification" content="i96BEJMxPvReBxzkUxv3Yi4Ns_KlgNHS4LTPl3XU2QU" />
   {literal}
   <style id="__jsx-522764773">.splash{background-image:linear-gradient(180deg,rgba(51,167,181,1) 0%,rgba(182,227,212,1) 43%,rgba(255,245,203,1) 100%);background:#fff;position:fixed;left:0;right:0;bottom:0;top:0;color:#fff;z-index:9999;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;text-align:center;-webkit-transition:visibility 1s;transition:visibility 1s;}
 .splash.loaded{pointer-event:none;visibility:hidden;}
@@ -65,14 +66,15 @@
           __NEXT_REGISTER_CHUNK = function (chunkName, fn) {
             __NEXT_LOADED_CHUNKS__.push({ chunkName: chunkName, fn: fn })
           }
+
           false
         </script>
  {/literal}
   <script async="" id="__NEXT_PAGE__/" src="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\index.js"></script>
   <script async="" id="__NEXT_PAGE__/_app" src="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\_app.js"></script>
   <script async="" id="__NEXT_PAGE__/_error" src="_next\b3a84d10-17b2-4da4-8fcb-6a84577747a1\page\_error.js"></script>
-  <script src="_next\static\commons\main-1f7d66c1d1038b934730.js" async=""></script> 
-  <script src="https://unpkg.com/delayed-scroll-restoration-polyfill@0.1.1/index.js"></script>
+  <script src="_next\static\commons\main-1f7d66c1d1038b934730.js" async=""></script>
+  <script src="_next\static\commons\main-20190120.js"></script>
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
  </body>
 </html>
