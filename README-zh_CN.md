@@ -13,41 +13,42 @@ ssrpanel_mod
 
 </div>
 
-English | [简体中文](README-zh_CN.md)
+简体中文 | [English](README.md)
 
-## 🖥 Environment Support
+## 🖥 系统支持
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Electron |
 | --------- | --------- | --------- | --------- | --------- | --------- |
 | IE9, IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
-## 🔗 Links
+## 🔗 链接
 - [Features](#Features)
 - [Installation](#installation)
 - [Getting Help](#getting-help)
 - [Contributing](#contributing)
 - [Preview-image](#preview-image)
 
-## 💎 Features
+## 💎 特点
 A succinct, fast and elegant Airport
 
-## 📦 Installation
+## 📦 安装
 <p align="left">
   <a href="#">
     <img width="150" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/open-in-broswer.svg">
   </a>
 </p>
-### Setting up the environment
+
+### 建立环境
+
 ```html
 Centos 7
-```
-### Configuration environment
-```html
 install lnmp1.4
 ```
-### Configuration environment
-Download and install the LNMP one-click installation package
-  * Add a virtual host to add ssl support as needed.
+
+### 配置环境
+下载并安装lnmp一键安装包
+  * 根据需要添加虚拟主机以添加SSL支持。
+  
 ```html
 yum install screen -y
 screen -S lnmp
@@ -55,37 +56,40 @@ wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz
 cd lnmp1.4 && ./install.sh lnmp
 lnmp vhost add
 ```
-  * Remove anti-cross directory removal tool
-This tool can quickly remove the anti-cross directory restrictions
+
+  * 删除目录限制工具
+此工具可以快速删除目录限制
+
 ```html
 cd lnmp1.4/tools
 ./remove_open_basedir_restriction.sh
 ```
-When prompted, enter the virtual host directory /home/wwwroot/yourdomain
-press Enter to confirm.
 
-  * Turn on the scandir() function
+出现提示时，输入虚拟主机目录 /home/wwwroot/yourdomain
+按Enter确认
+
+  * 打开PHP函数 scandir() 
 ```html
 sed -i 's/,scandir//g' /usr/local/php/etc/php.ini
 ```
 
-  * Modify conf
+  * 修改conf
 ```html
 vi /usr/local/nginx/conf/vhost/yourdomain.conf
 ```
-  * Add this to the server
+  * 将此添加到服务器
 ```html
 location / 
 {
 	try_files $uri $uri/ /index.php$is_args$args;		                
 }
 ```
-  * Modify the root line
+  * 修改运行目录
 ```html
 root /home/wwwroot/yourdomain/public;
 ```
 
-  * Sample conf
+  * conf示例
 ```html
 server
     {
@@ -124,8 +128,8 @@ location / {
                 }
  access_log  /home/wwwlogs/yourdomain.log;
 ```
-### Install panel program
-  * Download panel program
+### 安装面板程序
+  * 下载面板程序1
 ```html
 cd /home/wwwroot/yourdomain
 yum install git -y
@@ -138,15 +142,15 @@ mv tool/alipay-f2fpay vendor/
 mv -f tool/autoload_classmap.php vendor/composer/
 ```
 
-  * Configuration database
-Login database
+  * 配置数据库
+登录数据库
 ```html
 mysql -u root -p                                
 mysql>CREATE DATABASE database_name;            
 mysql>use database_name;                      
 mysql>source /home/wwwroot/yourdomain/sql/all.sql  
 ```
-  * Configuring sspanel
+  * 配置 ssrpanel
   
 ```html
 cd /home/wwwroot/yourdomain
@@ -154,15 +158,15 @@ cp config/.config.php.example config/.config.php
 vi config/.config.php
 lnmp restart
 ```
-### Create an administrator and sync users
+### 创建管理员并同步用户
 ```html
 php xcat createAdmin          //Create an Administrator
 php xcat syncusers            //Synchronous user
 php xcat initQQWry            //Download IP parsing library
 php xcat resetTraffic         //Reset traffic
 ```
-### Set up a scheduled task
-Execute the crontab -e command and add the following five segments.
+### 设置计划任务
+执行crontab-e命令并添加以下几行
 ```html
 30 22 * * * php /home/wwwroot/your-site-folder/xcat sendDiaryMail 
 */1 * * * * php /home/wwwroot/your-site-folder/xcat synclogin
@@ -172,7 +176,7 @@ Execute the crontab -e command and add the following five segments.
 */1 * * * * php -n /home/wwwroot/your-site-folder/xcat syncnas
 ```
 
-## 🔨 Getting Help
+## 🔨 获得帮助
 
 <p align="left">
 	<a href="mailto:hello@ioslide.com">
@@ -180,10 +184,10 @@ Execute the crontab -e command and add the following five segments.
 	</a>
 </p>
 
-## ⌨️ Contributing
+## ⌨️ 贡献
 [ioslide](https://github.com/ioslide) 
 
-## 🚀 Preview-image
+## 🚀 部分预览图
 
 ![image](https://github.com/ioslide/image/blob/master/1.gif)
 
