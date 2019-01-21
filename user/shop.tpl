@@ -51,16 +51,17 @@ ol, ul {
 }
 
 .backgroundd::after {
-  content: '';
-  background: #60a9ff;
-  background: linear-gradient(to bottom, #60a9ff 0%,#4394f4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60a9ff', endColorstr='#4394f4',GradientType=0 );
-  height: 350px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
+    content: '';
+    background: #60a9ff;
+    background: linear-gradient(to bottom, #60a9ff 0%,#4394f4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60a9ff', endColorstr='#4394f4',GradientType=0 );
+    height: 350px;
+    left: 0;
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    z-index: 1;
+    border-radius: 13px;
 }
 
 @media (min-width: 900px) {
