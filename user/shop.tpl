@@ -194,6 +194,17 @@ ol, ul {
 .pricing-button.is-featured:active {
   background-color: #269aff;
 }
+.card{
+    border: 0;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.col-md-6{
+    margin-bottom: 10px;
+}
     </style>
 </head>
 <body class="page-orange">
@@ -421,80 +432,12 @@ ol, ul {
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-md-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <main class="content">
-                                                        <div class="container">
-                                                            <div class="col-lg-12 col-sm-12">
-                                                                <section class="content-inner margin-top-no">
-                                                                    <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
-                                                                        <div class="modal-dialog modal-xs">
-                                                                            <div class="modal-content">
-                                                                                <div class="modal-heading">
-                                                                                    <a class="modal-close" data-dismiss="modal">×</a>
-                                                                                    <h2 class="modal-title">您有优惠码吗？</h2>
-                                                                                </div>
-                                                                                <div class="modal-inner">
-                                                                                    <div class="form-group form-group-label">
-                                                                                        <label class="floating-label" for="coupon">有的话，请在这里输入。没有的话，直接确定吧</label>
-                                                                                        <input class="form-control" id="coupon" type="text">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="modal-footer">
-                                                                                    <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">确定</button></p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                    <div aria-hidden="true" class="modal modal-va-middle fade" id="order_modal" role="dialog" tabindex="-1">
-                                                                        <div class="modal-dialog modal-xs">
-                                                                            <div class="modal-content">
-                                                                                <div class="modal-heading">
-                                                                                    <a class="modal-close" data-dismiss="modal">×</a>
-                                                                                    <h2 class="modal-title">订单确认</h2>
-                                                                                </div>
-                                                                                <div class="modal-inner">
-                                                                                    <p id="name">商品名称：</p>
-                                                                                    <p id="credit">优惠额度：</p>
-                                                                                    <p id="total">总金额：</p>
-                                                    
-                                                                                    <div class="checkbox switch">
-                                                                                        <label for="disableothers">
-                                                                                            <input checked class="access-hide" id="disableothers" type="checkbox">
-                                                                                            <span class="switch-toggle"></span>关闭旧套餐自动续费
-                                                                                        </label>
-                                                                                    </div>
-                                                                                    <br/>
-                                                                                    <div class="checkbox switch" id="autor">
-                                                                                        <label for="autorenew">
-                                                                                            <input checked class="access-hide" id="autorenew" type="checkbox">
-                                                                                            <span class="switch-toggle"></span>到期时自动续费
-                                                                                        </label>
-                                                                                    </div>
-                                                                                    
-                                                                                </div>
-                                                                                
-                                                                                <div class="modal-footer">
-                                                                                    <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">确定</button></p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    {include file='dialog.tpl'}
-                                                            </div>
-                                                        </div>
-                                                    </main>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                            <div class="backgroundd">
-                                                    <div class="container">
-                                                      <div class="panel pricing-table">
-                                                        
-                                                        <div class="pricing-plan">
+                                        <div class="backgroundd">
+                                            <div class="container">
+                                                <div class="panel pricing-table">
+                                                    <div class="pricing-plan">
                                                           <img src="https://s22.postimg.cc/8mv5gn7w1/paper-plane.png" alt="" class="pricing-img">
                                                           <h2 class="pricing-header">体验套餐</h2>
                                                           <ul class="pricing-features">
@@ -504,9 +447,8 @@ ol, ul {
                                                           </ul>
                                                           <span class="pricing-price">Free</span>
                                                           <a href="javascript:void(0);" onclick="buy('1',0)" class="pricing-button">Buy</a>
-                                                        </div>
-                                                        
-                                                        <div class="pricing-plan">
+                                                    </div>
+                                                    <div class="pricing-plan">
                                                           <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="" class="pricing-img">
                                                           <h2 class="pricing-header">至臻会员</h2>
                                                           <ul class="pricing-features">
@@ -519,8 +461,8 @@ ol, ul {
                                                           </ul>
                                                           <span class="pricing-price">￥2</span>
                                                           <a href="javascript:void(0);" onclick="buy('3',0)" class="pricing-button is-featured">Buy</a>
-                                                        </div>
-                                                        <div class="pricing-plan">
+                                                    </div>
+                                                    <div class="pricing-plan">
                                                                 <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="" class="pricing-img">
                                                                 <h2 class="pricing-header">加油包</h2>
                                                                 <ul class="pricing-features">
@@ -530,12 +472,65 @@ ol, ul {
                                                                 </ul>
                                                                 <span class="pricing-price">￥0.5</span>
                                                                 <a href="javascript:void(0);" onclick="buy('2',0)" class="pricing-button">Buy</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
+                                                <div class="modal-dialog modal-xs">
+                                                    <div class="modal-content">
+                                                        <div class="modal-heading">
+                                                            <a class="modal-close" data-dismiss="modal">×</a>
+                                                            <h2 class="modal-title">您有优惠码吗？</h2>
+                                                        </div>
+                                                        <div class="modal-inner">
+                                                            <div class="form-group form-group-label">
+                                                                <label class="floating-label" for="coupon">有的话，请在这里输入。没有的话，直接确定吧</label>
+                                                                <input class="form-control" id="coupon" type="text">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">确定</button></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div aria-hidden="true" class="modal modal-va-middle fade" id="order_modal" role="dialog" tabindex="-1">
+                                                <div class="modal-dialog modal-xs">
+                                                    <div class="modal-content">
+                                                        <div class="modal-heading">
+                                                            <a class="modal-close" data-dismiss="modal">×</a>
+                                                            <h2 class="modal-title">订单确认</h2>
+                                                        </div>
+                                                        <div class="modal-inner">
+                                                            <p id="name">商品名称：</p>
+                                                            <p id="credit">优惠额度：</p>
+                                                            <p id="total">总金额：</p>
+                            
+                                                            <div class="checkbox switch">
+                                                                <label for="disableothers">
+                                                                    <input checked class="access-hide" id="disableothers" type="checkbox">
+                                                                    <span class="switch-toggle"></span>关闭旧套餐自动续费
+                                                                </label>
+                                                            </div>
+                                                            <br/>
+                                                            <div class="checkbox switch" id="autor">
+                                                                <label for="autorenew">
+                                                                    <input checked class="access-hide" id="autorenew" type="checkbox">
+                                                                    <span class="switch-toggle"></span>到期时自动续费
+                                                                </label>
+                                                            </div>
+                                                            
                                                         </div>
                                                         
-                                                      </div>
+                                                        <div class="modal-footer">
+                                                            <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">确定</button></p>
+                                                        </div>
                                                     </div>
-                                                  </div>
                                                 </div>
+                                            </div>
+                                            {include file='dialog.tpl'}
+                                    </div>
                                 </div>
                             </div>
                         </div>
