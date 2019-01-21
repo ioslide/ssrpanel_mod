@@ -169,7 +169,7 @@
                                             <span class="navbar-toggler-bar bar3"></span>
                                         </button>
                                     </div>
-                                    <a class="navbar-brand" href="#pablo">系统月流量</a>
+                                    <a class="navbar-brand" href="#pablo">商品列表</a>
                                 </div>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -242,9 +242,9 @@
                         <!-- End Navbar -->
                         <div class="panel-header">
                             <div class="header text-center">
-                                <h2 class="title">Work order system</h2>
+                                <h2 class="title">Product list</h2>
                                 <p class="category">Send to
-                                    <a target="_blank" href="#">XHY</a>system
+                                    <a target="_blank" href="#">XHY </a>system
                                 </p>
                             </div>
                         </div>
@@ -253,22 +253,7 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <div class="places-buttons">
-                                                <div class="row">
-                                                    <div class="col-md-6 ml-auto mr-auto text-center">
-                                                        <h4 class="card-title">
-                                                            工单列表
-                                                            <p class="category">List of work orders</p>
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <main class="content">
-                                                    <div class="content-header ui-content-header">
-                                                        <div class="container">
-                                                            <h1 class="content-heading">商品列表</h1>
-                                                        </div>
-                                                    </div>
                                                     <div class="container">
                                                         <div class="col-lg-12 col-sm-12">
                                                             <section class="content-inner margin-top-no">
