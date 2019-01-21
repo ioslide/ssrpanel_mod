@@ -22,11 +22,11 @@ ssrpanel_mod
 | IE9, IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 ## 🔗 链接
-- [Features](#user-content-️-features)
-- [Installation](#user-content-️-installation)
-- [Getting Help](#user-content-️-getting-help)
-- [Contributing](#user-content-️-contributing)
-- [Preview-image](#user-content-️-preview-image)
+- [Features](#user-content-️-特点)
+- [Installation](#user-content-️-安装)
+- [Getting Help](#user-content--获得帮助)
+- [Contributing](#user-content-️-贡献)
+- [Preview-image](#user-content-️-部分预览图)
 
 ## 💎 特点
 A succinct, fast and elegant Airport
