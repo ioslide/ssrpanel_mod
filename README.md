@@ -189,6 +189,8 @@ Execute the crontab -e command and add the following five segments.
 
 ## 🚀 Preview-image
 
+![image](https://github.com/ioslide/image/blob/master/user_shop (1).png)
+
 ![image](https://github.com/ioslide/image/blob/master/1.gif)
 
 ![image](https://github.com/ioslide/image/blob/master/1.jpg)
