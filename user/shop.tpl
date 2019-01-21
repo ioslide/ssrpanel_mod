@@ -20,6 +20,7 @@
     <link href="https://js.ioslide.com/ssr/alert.css" rel="stylesheet" />
     <!--   Core JS Files   -->
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="https://js.ioslide.com/ssr/assets/js/core/popper.min.js"></script>
     <script src="https://js.ioslide.com/ssr/assets/js/core/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
@@ -36,6 +37,235 @@
          .sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active > a{
         background-color: #ffe0e038;
       }
+      
+      * {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+.containerr {
+  width: 280px;
+  height: 500px;
+  margin: 30px auto;
+}
+
+.containerr .cardd {
+  border-radius: 25px;
+  box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+}
+
+.containerr .card-head {
+  position: relative;
+  height: 252px;
+  background: #fa782e;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #fa782e 8%, #c82930 83%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fa782e', endColorstr='#c82930', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  border-radius: 25px 25px 0 0;
+}
+
+.card-logo {
+  width: 55px;
+  margin: 20px;
+}
+
+.product-img {
+  position: absolute;
+  left: 0;
+  margin-top: -16px;
+  margin-left: 50px;
+}
+
+.product-detail {
+  padding: 0 20px;
+  font-size: 11px;
+  color: #fff;
+}
+
+.product-detail h2 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.back-text {
+  display: inline-block;
+  font-size: 125px;
+  font-weight: 900;
+  margin-left: -7px;
+  margin-top: -42px;
+  opacity: 0.1;
+}
+
+.card-body {
+  height: 255px;
+  background: #fff;
+  border-radius: 0 0 25px 25px;
+}
+
+.product-title {
+  padding: 20px 20px 5px 20px;
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.product-title b {
+  font-weight: 900;
+  letter-spacing: 0px;
+}
+
+.badge {
+  position: relative;
+  font-size: 10px;
+  font-weight: 300;
+  color: #fff;
+  background: #11e95b;
+  padding: 2px 5px;
+  border-radius: 4px;
+  top: -2px;
+  margin-left: 5px;
+}
+
+.product-caption {
+  display: block;
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.product-rating {
+  padding: 0 20px;
+  font-size: 11px;
+}
+
+.product-rating i.grey {
+  color: #acacab;
+}
+
+.product-size h4 {
+  font-size: 11px;
+  padding: 0 21px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.ul-size {
+  margin-left: 15px;
+}
+
+.ul-size li {
+  list-style: none;
+  float: left;
+  margin-right: 20px;
+}
+
+.ul-size li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 11px;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 23px;
+  color: #000;
+}
+
+.ul-size li a.active {
+  background: #f35e3d;
+  color: #fff;
+}
+
+.product-size:before,
+.product-size:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.product-color h4 {
+  font-size: 11px;
+  padding: 0 21px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.ul-color {
+  margin-left: 27px;
+}
+
+.ul-color li {
+  list-style: none;
+  float: left;
+  margin-right: 20px;
+}
+
+.ul-color li a {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+.ul-color li a.orange {
+  background: #f35e3d;
+}
+
+.ul-color li a.green {
+  background: #11e95b;
+}
+
+.ul-color li a.yellow {
+  background: #ffd414;
+}
+
+.ul-color li a.active:after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  border: 1px solid #f35e3d;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+
+.product-price {
+  position: absolute;
+  background: #11e95b;
+  padding: 7px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 200;
+  color: #fff;
+  border-radius: 7px;
+  margin-top: -13px;
+  margin-left: -5px;
+  box-shadow: -10px 20px 15px -10px rgba(17, 233, 91, 0.3);
+}
+
+.product-price b {
+  margin-left: 5px;
+}
+
+
     </style>
 </head>
 <body class="page-orange">
@@ -264,96 +494,155 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <main class="content">
-                                                    <div class="container">
-                                                        <div class="col-lg-12 col-sm-12">
-                                                            <section class="content-inner margin-top-no">
-                                                                <div class="table-responsive">
-                                                                    {$shops->render()}
-                                                                    <table class="table ">
-                                                                        <tr>
-                                                                            <th>套餐</th>
-                                                                            <th>价格</th>
-                                                                            <th>套餐详情</th>
-                                                                          <th>操作</th>
-                                                                        </tr>
-                                                                        {foreach $shops as $shop}
-                                                                        <tr>
-                                                                            <td>{$shop->name}</td>
-                                                                            <td>{$shop->price} 元</td>
-                                                                            <td>{$shop->content()}</td>
-                                                                            <td>
-                                                                                <a class="btn btn-brand-accent" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew})">购买</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        {/foreach}
-                                                                    </table>
-                                                                    {$shops->render()}
-                                                                </div>
-                                                                
-                                                                <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
-                                                                    <div class="modal-dialog modal-xs">
-                                                                        <div class="modal-content">
-                                                                            <div class="modal-heading">
-                                                                                <a class="modal-close" data-dismiss="modal">×</a>
-                                                                                <h2 class="modal-title">您有优惠码吗？</h2>
-                                                                            </div>
-                                                                            <div class="modal-inner">
-                                                                                <div class="form-group form-group-label">
-                                                                                    <label class="floating-label" for="coupon">有的话，请在这里输入。没有的话，直接确定吧</label>
-                                                                                    <input class="form-control" id="coupon" type="text">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <main class="content">
+                                                        <div class="container">
+                                                            <div class="col-lg-12 col-sm-12">
+                                                                <section class="content-inner margin-top-no">
+                                                                    <div class="table-responsive">
+                                                                        {$shops->render()}
+                                                                        <table class="table ">
+                                                                            <tr>
+                                                                                <th>套餐</th>
+                                                                                <th>价格</th>
+                                                                                <th>套餐详情</th>
+                                                                            <th>操作</th>
+                                                                            </tr>
+                                                                            {foreach $shops as $shop}
+                                                                            <tr>
+                                                                                <td>{$shop->name}</td>
+                                                                                <td>{$shop->price} 元</td>
+                                                                                <td>{$shop->content()}</td>
+                                                                                <td>
+                                                                                    <a class="btn btn-brand-accent" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew})">购买</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            {/foreach}
+                                                                        </table>
+                                                                        {$shops->render()}
+                                                                    </div>
+                                                                    
+                                                                    <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
+                                                                        <div class="modal-dialog modal-xs">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-heading">
+                                                                                    <a class="modal-close" data-dismiss="modal">×</a>
+                                                                                    <h2 class="modal-title">您有优惠码吗？</h2>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="modal-footer">
-                                                                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">确定</button></p>
+                                                                                <div class="modal-inner">
+                                                                                    <div class="form-group form-group-label">
+                                                                                        <label class="floating-label" for="coupon">有的话，请在这里输入。没有的话，直接确定吧</label>
+                                                                                        <input class="form-control" id="coupon" type="text">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">确定</button></p>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                
-                                                                <div aria-hidden="true" class="modal modal-va-middle fade" id="order_modal" role="dialog" tabindex="-1">
-                                                                    <div class="modal-dialog modal-xs">
-                                                                        <div class="modal-content">
-                                                                            <div class="modal-heading">
-                                                                                <a class="modal-close" data-dismiss="modal">×</a>
-                                                                                <h2 class="modal-title">订单确认</h2>
-                                                                            </div>
-                                                                            <div class="modal-inner">
-                                                                                <p id="name">商品名称：</p>
-                                                                                <p id="credit">优惠额度：</p>
-                                                                                <p id="total">总金额：</p>
-                                                
-                                                                                <div class="checkbox switch">
-                                                                                    <label for="disableothers">
-                                                                                        <input checked class="access-hide" id="disableothers" type="checkbox">
-                                                                                        <span class="switch-toggle"></span>关闭旧套餐自动续费
-                                                                                    </label>
+                                                                    
+                                                                    <div aria-hidden="true" class="modal modal-va-middle fade" id="order_modal" role="dialog" tabindex="-1">
+                                                                        <div class="modal-dialog modal-xs">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-heading">
+                                                                                    <a class="modal-close" data-dismiss="modal">×</a>
+                                                                                    <h2 class="modal-title">订单确认</h2>
                                                                                 </div>
-                                                                                <br/>
-                                                                                <div class="checkbox switch" id="autor">
-                                                                                    <label for="autorenew">
-                                                                                        <input checked class="access-hide" id="autorenew" type="checkbox">
-                                                                                        <span class="switch-toggle"></span>到期时自动续费
-                                                                                    </label>
+                                                                                <div class="modal-inner">
+                                                                                    <p id="name">商品名称：</p>
+                                                                                    <p id="credit">优惠额度：</p>
+                                                                                    <p id="total">总金额：</p>
+                                                    
+                                                                                    <div class="checkbox switch">
+                                                                                        <label for="disableothers">
+                                                                                            <input checked class="access-hide" id="disableothers" type="checkbox">
+                                                                                            <span class="switch-toggle"></span>关闭旧套餐自动续费
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <br/>
+                                                                                    <div class="checkbox switch" id="autor">
+                                                                                        <label for="autorenew">
+                                                                                            <input checked class="access-hide" id="autorenew" type="checkbox">
+                                                                                            <span class="switch-toggle"></span>到期时自动续费
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    
                                                                                 </div>
                                                                                 
-                                                                            </div>
-                                                                            
-                                                                            <div class="modal-footer">
-                                                                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">确定</button></p>
+                                                                                <div class="modal-footer">
+                                                                                    <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">确定</button></p>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                {include file='dialog.tpl'}
+                                                                    {include file='dialog.tpl'}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </main>
+                                                    </main>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="col-md-6">
+                                            <div class="containerr">
+                                                    <div class="cardd">
+                                                      <div class="card-head">
+                                                        <img src="https://s5.postimg.cc/wy79025cz/nike_Logo_White.png" alt="logo" class="card-logo">
+                                                        <img src="https://s5.postimg.cc/j9r8yf9gn/sws1.png" alt="Shoe" class="product-img">
+                                                        <div class="product-detail">
+                                                          <h2>Hartbeespoort</h2> Support and Nike Zoom Air come together for a more supportive feel with high-speed responsiveness
+                                                        </div>
+                                                        <span class="back-text">
+                                                                FAS
+                                                              </span>
+                                                      </div>
+                                                      <div class="card-body">
+                                                        <div class="product-desc">
+                                                          <span class="product-title">
+                                                                  Hartbee<b>spoort</b>
+                                                                  <span class="badge">
+                                                                    New
+                                                                  </span>
+                                                          </span>
+                                                          <span class="product-caption">
+                                                                  Basket Ball Collection
+                                                                </span>
+                                                          <span class="product-rating">
+                                                                  <i class="fa fa-star"></i>
+                                                                  <i class="fa fa-star"></i>
+                                                                  <i class="fa fa-star"></i>
+                                                                  <i class="fa fa-star"></i>
+                                                                  <i class="fa fa-star grey"></i>
+                                                                </span>
+                                                        </div>
+                                                        <div class="product-properties">
+                                                          <span class="product-size">
+                                                                  <h4>Size</h4>
+                                                                  <ul class="ul-size">
+                                                                    <li><a href="#">7</a></li>
+                                                                    <li><a href="#">8</a></li>
+                                                                    <li><a href="#">9</a></li>
+                                                                    <li><a href="#" class="active">10</a></li>
+                                                                    <li><a href="#">11</a></li>
+                                                                  </ul>
+                                                                </span>
+                                                          <span class="product-color">
+                                                                  <h4>Colour</h4>
+                                                                  <ul class="ul-color">
+                                                                    <li><a href="#" class="orange active"></a></li>
+                                                                    <li><a href="#" class="green"></a></li>
+                                                                    <li><a href="#" class="yellow"></a></li>
+                                                                  </ul>
+                                                                </span>
+                                                          <span class="product-price">
+                                                                  USD<b>23,453</b>
+                                                                </span>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                             </div>
                                 </div>
                             </div>
                         </div>
