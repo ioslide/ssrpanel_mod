@@ -42,6 +42,12 @@
     <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<style>
+    .sidebar-wrapper::-webkit-scrollbar{
+        background-color: #ffffff00;
+    }
+    .sidebar-wrapper::-webkit-scrollbar-track{
+        background-color: #ffffff00;
+    }
 		@import url(http://weloveiconfonts.com/api/?family=entypo);
 		/* entypo */
 		[class*="entypo-"]:before {
