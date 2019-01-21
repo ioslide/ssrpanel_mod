@@ -533,7 +533,7 @@ ol, ul {
                                                             <li class="pricing-features-item">工作时间客服接入</li>
                                                           </ul>
                                                           <span class="pricing-price">￥0.5</span>
-                                                          <a href="#/" class="pricing-button is-featured">Buy</a>
+                                                          <a href="javascript:void(0);" onclick="buy('4',0)" class="pricing-button is-featured">Buy</a>
                                                         </div>
                                                         <div class="pricing-plan">
                                                           <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="" class="pricing-img">
@@ -546,13 +546,15 @@ ol, ul {
                                                             <li class="pricing-features-item">24小时客服接入</li>
                                                             <li class="pricing-features-item">生日福袋</li>
                                                           </ul>
+                                                          <span class="pricing-price">￥2</span>
+                                                          <a href="javascript:void(0);" onclick="buy('3',0)" class="pricing-button">Buy</a>
                                                           <h2 class="pricing-header">加油包</h2>
                                                           <ul class="pricing-features">
                                                             <li class="pricing-features-item">100G 流量</li>
                                                             <li class="pricing-features-item">一个月内有效</li>
                                                           </ul>
-                                                          <span class="pricing-price">￥2</span>
-                                                          <a href="#/" class="pricing-button">Buy</a>
+                                                          <span class="pricing-price">￥1</span>
+                                                          <a href="javascript:void(0);" onclick="buy('2',0)" class="pricing-button">Buy</a>
                                                         </div>
                                                         
                                                       </div>
