@@ -245,23 +245,45 @@
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="card-category">注意事项</h5>
+                                                <h4 class="card-title">Matters needing attention</h4>
+                                            </div>
+                                            <div class="card-body text-warn" id="list">
+                                                <div class="alert alert-info alert-with-icon" data-notify="container">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                                                    </button>
+                                                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                    <span data-notify="message">商品不可叠加，新购商品会覆盖旧商品</span>
+                                                </div>
+                                                <div class="alert alert-info alert-with-icon" data-notify="container">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                                                    </button>
+                                                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                    <span data-notify="message">购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效</span>
+                                                </div>
+                                            </div>
+                                            <script language="javascript">
+                                            $(document).ready(function(){
+                                            $(".close").click(function(){
+                                            var nods = $("#list div:last");
+                                                    $(this).parent().remove();
+                                            });
+                                            });
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                     <div class="card">
                                         <div class="card-body">
                                             <main class="content">
                                                     <div class="container">
                                                         <div class="col-lg-12 col-sm-12">
                                                             <section class="content-inner margin-top-no">
-                                                                
-                                                                <div class="card">
-                                                                    <div class="card-main">
-                                                                        <div class="card-inner">
-                                                                            <p>商品不可叠加，新购商品会覆盖旧商品的效果。</p>
-                                                                            <p>购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效。</p>
-                                                                            <p>当前余额：<code>{$user->money}</code> 元</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                
                                                                 <div class="table-responsive">
                                                                     {$shops->render()}
                                                                     <table class="table ">
@@ -270,7 +292,6 @@
                                                                             <th>价格</th>
                                                                             <th>套餐详情</th>
                                                                           <th>操作</th>
-                                                                            
                                                                         </tr>
                                                                         {foreach $shops as $shop}
                                                                         <tr>
@@ -346,6 +367,7 @@
                                                 </main>
                                         </div>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
