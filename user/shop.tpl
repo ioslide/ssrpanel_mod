@@ -32,6 +32,11 @@
     <script src="https://js.ioslide.com/ssr/assets/js/now-ui-dashboard.js?v=1.0.1"></script>
     <!-- svg -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js'></script>
+    <style>
+         .sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active > a{
+        background-color: #ffe0e038;
+      }
+    </style>
 </head>
 <body class="page-orange">
     <div class="wrapper">
@@ -169,7 +174,7 @@
                                             <span class="navbar-toggler-bar bar3"></span>
                                         </button>
                                     </div>
-                                    <a class="navbar-brand" href="#pablo">商品列表</a>
+                                    <a class="navbar-brand" href="#pablo">系统月流量</a>
                                 </div>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -244,7 +249,7 @@
                             <div class="header text-center">
                                 <h2 class="title">Product list</h2>
                                 <p class="category">Send to
-                                    <a target="_blank" href="#">XHY </a>system
+                                    <a target="_blank" href="#">XHY</a>system
                                 </p>
                             </div>
                         </div>
@@ -384,6 +389,9 @@
     </div>
 
 </body>
+{include file='user/footer.tpl'}
+
+
 <script>
 function buy(id,auto) {
 if(auto==0)
