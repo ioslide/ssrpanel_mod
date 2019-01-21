@@ -45,7 +45,7 @@ ol, ul {
     list-style: none;
 }
 .backgroundd {
-  padding: 0 25px 25px;
+  padding: 0 0px 25px;
   position: relative;
   width: 100%;
 }
@@ -74,8 +74,13 @@ ol, ul {
   padding: 50px 0 0;
   max-width: 960px;
   width: 100%;
+  padding-right:0px;
+  padding-left: 0px;
 }
-
+.container{
+    padding-right:0px;
+  padding-left: 0px;
+}
 .panel {
   background-color: #fff;
   border-radius: 10px;
@@ -133,7 +138,8 @@ ol, ul {
 .pricing-header {
   color: #888;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-size: 18px;
 }
 
 .pricing-features {
@@ -421,29 +427,6 @@ ol, ul {
                                                         <div class="container">
                                                             <div class="col-lg-12 col-sm-12">
                                                                 <section class="content-inner margin-top-no">
-                                                                    <div class="table-responsive">
-                                                                        {$shops->render()}
-                                                                        <table class="table ">
-                                                                            <tr>
-                                                                                <th>套餐</th>
-                                                                                <th>价格</th>
-                                                                                <th>套餐详情</th>
-                                                                            <th>操作</th>
-                                                                            </tr>
-                                                                            {foreach $shops as $shop}
-                                                                            <tr>
-                                                                                <td>{$shop->name}</td>
-                                                                                <td>{$shop->price} 元</td>
-                                                                                <td>{$shop->content()}</td>
-                                                                                <td>
-                                                                                    <a class="btn btn-brand-accent" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew})">购买</a>
-                                                                                </td>
-                                                                            </tr>
-                                                                            {/foreach}
-                                                                        </table>
-                                                                        {$shops->render()}
-                                                                    </div>
-                                                                    
                                                                     <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
                                                                         <div class="modal-dialog modal-xs">
                                                                             <div class="modal-content">
@@ -523,19 +506,6 @@ ol, ul {
                                                         </div>
                                                         
                                                         <div class="pricing-plan">
-                                                          <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="" class="pricing-img">
-                                                          <h2 class="pricing-header">乐享会员</h2>
-                                                          <ul class="pricing-features">
-                                                            <li class="pricing-features-item">流量 512 G </li>
-                                                            <li class="pricing-features-item">账号升级为等级 4 </li>
-                                                            <li class="pricing-features-item">不限速端口</li>
-                                                            <li class="pricing-features-item">不限制IP</li>
-                                                            <li class="pricing-features-item">工作时间客服接入</li>
-                                                          </ul>
-                                                          <span class="pricing-price">￥0.5</span>
-                                                          <a href="javascript:void(0);" onclick="buy('4',0)" class="pricing-button is-featured">Buy</a>
-                                                        </div>
-                                                        <div class="pricing-plan">
                                                           <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="" class="pricing-img">
                                                           <h2 class="pricing-header">至臻会员</h2>
                                                           <ul class="pricing-features">
@@ -547,14 +517,18 @@ ol, ul {
                                                             <li class="pricing-features-item">生日福袋</li>
                                                           </ul>
                                                           <span class="pricing-price">￥2</span>
-                                                          <a href="javascript:void(0);" onclick="buy('3',0)" class="pricing-button">Buy</a>
-                                                          <h2 class="pricing-header">加油包</h2>
-                                                          <ul class="pricing-features">
-                                                            <li class="pricing-features-item">100G 流量</li>
-                                                            <li class="pricing-features-item">一个月内有效</li>
-                                                          </ul>
-                                                          <span class="pricing-price">￥1</span>
-                                                          <a href="javascript:void(0);" onclick="buy('2',0)" class="pricing-button">Buy</a>
+                                                          <a href="javascript:void(0);" onclick="buy('3',0)" class="pricing-button is-featured">Buy</a>
+                                                        </div>
+                                                        <div class="pricing-plan">
+                                                                <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="" class="pricing-img">
+                                                                <h2 class="pricing-header">加油包</h2>
+                                                                <ul class="pricing-features">
+                                                                      <li class="pricing-features-item">100G 流量</li>
+                                                                      <li class="pricing-features-item">一个月内有效</li>
+                                                                      <li class="pricing-features-item">不限速端口</li>
+                                                                </ul>
+                                                                <span class="pricing-price">￥0.5</span>
+                                                                <a href="javascript:void(0);" onclick="buy('2',0)" class="pricing-button">Buy</a>
                                                         </div>
                                                         
                                                       </div>
