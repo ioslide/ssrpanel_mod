@@ -22,7 +22,7 @@ English | [简体中文](README-zh_CN.md)
 | IE9, IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 ## 🔗 Links
-- [Features](#Features)
+- [Features](#features)
 - [Installation](#installation)
 - [Getting Help](#getting-help)
 - [Contributing](#contributing)
