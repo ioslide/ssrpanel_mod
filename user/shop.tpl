@@ -174,7 +174,7 @@
                                             <span class="navbar-toggler-bar bar3"></span>
                                         </button>
                                     </div>
-                                    <a class="navbar-brand" href="#pablo">系统月流量</a>
+                                    <a class="navbar-brand" href="#pablo">商品列表</a>
                                 </div>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -200,18 +200,7 @@
                                                 </p>
                                             </a>
                                         </li>
-            
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" dropdown-toggle" id="checkin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="now-ui-icons gestures_tap-01"></i>
-                                                 <p>
-                                                    <span class="d-lg-none d-md-block">Checkin</span>
-                                                </p> 
-                                            </a>
-                                        </li>
-            
-            
-            
+
                                         {if $user->isLogin}
                                         <li class="nav-item">
                                             <a class="nav-link dropdown-toggle" href="#pablo" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -387,10 +376,48 @@
                 
                     </div>
     </div>
-
+    <div aria-hidden="true" class="modal modal-va-middle fade" id="result" role="dialog" tabindex="-1" >
+            <div class="modal-dialog modal-xs">
+                <div class="alterttt">
+                    <div class="f-modal-alert" id="result_ok" data-dismiss="modal">
+                        <div class="f-modal-icon f-modal-success animate">
+                            <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
+                            <span class="f-modal-line f-modal-long animateSuccessLong"></span>
+                            <div class="f-modal-placeholder"></div>
+                            <div class="f-modal-fix"></div>
+                        </div>
+                    </div>
+                    <div class="modal-content">
+                        <div class="modal-inner">
+                            <p class="h5 margin-top-sm text-black-hint" id="msg">您似乎已经签到过了...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg id="radar-circle">
+                <circle cx="50%" cy="50%" r="1069.39" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.1">
+                    <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="0.15s"></animate>
+                </circle>
+                
+                <circle cx="50%" cy="50%" r="813.192" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.2">
+                    <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="1.25s"></animate>
+                </circle>
+                
+                <circle cx="50%" cy="50%" r="569.192" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.3">
+                    <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="2.35"></animate>
+                </circle>
+                
+                <circle cx="50%" cy="50%" r="325.192" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.2">
+                    <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="3.45s"></animate>
+                </circle>
+                
+                <circle cx="50%" cy="50%" r="81.1922" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.1">
+                    <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="4.55s"></animate>
+                </circle>
+            </svg>
+        </div>
 </body>
 {include file='user/footer.tpl'}
-
 
 <script>
 function buy(id,auto) {
