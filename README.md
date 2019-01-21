@@ -22,11 +22,11 @@ English | [简体中文](README-zh_CN.md)
 | IE9, IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 ## 🔗 Links
-- [Features](#features)
-- [Installation](#installation)
-- [Getting Help](#getting-help)
-- [Contributing](#contributing)
-- [Preview-image](#preview-image)
+- [Features](#user-content-️-features)
+- [Installation](#user-content-️-installation)
+- [Getting Help](#user-content-️-getting-help)
+- [Contributing](#user-content-️-contributing)
+- [Preview-image](#user-content-️-preview-image)
 
 ## 💎 Features
 A succinct, fast and elegant Airport
