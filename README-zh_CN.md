@@ -22,11 +22,11 @@ ssrpanel_mod
 | IE9, IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 ## 🔗 链接
-- [Features](#Features)
-- [Installation](#installation)
-- [Getting Help](#getting-help)
-- [Contributing](#contributing)
-- [Preview-image](#preview-image)
+- [Features](#user-content-️-features)
+- [Installation](#user-content-️-installation)
+- [Getting Help](#user-content-️-getting-help)
+- [Contributing](#user-content-️-contributing)
+- [Preview-image](#user-content-️-preview-image)
 
 ## 💎 特点
 A succinct, fast and elegant Airport
@@ -188,6 +188,7 @@ php xcat resetTraffic         //Reset traffic
 [ioslide](https://github.com/ioslide) 
 
 ## 🚀 部分预览图
+![image](https://github.com/ioslide/image/blob/master/user_shop%20(1).png)
 
 ![image](https://github.com/ioslide/image/blob/master/1.gif)
 
