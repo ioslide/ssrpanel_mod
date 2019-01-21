@@ -37,240 +37,161 @@
          .sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active > a{
         background-color: #ffe0e038;
       }
-      
-      * {
-  margin: 0;
-  padding: 0;
-  outline: none;
-}
-.containerr {
-  width: 280px;
-  height: 500px;
-  margin: 30px auto;
-}
 
-.containerr .cardd {
-  border-radius: 25px;
-  box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+*, *:before, *:after {
+  box-sizing: inherit;
 }
-
-.containerr .card-head {
+ol, ul {
+    list-style: none;
+}
+.backgroundd {
+  padding: 0 25px 25px;
   position: relative;
-  height: 252px;
-  background: #fa782e;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #fa782e 8%, #c82930 83%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fa782e', endColorstr='#c82930', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
-  border-radius: 25px 25px 0 0;
+  width: 100%;
 }
 
-.card-logo {
-  width: 55px;
-  margin: 20px;
-}
-
-.product-img {
-  position: absolute;
+.backgroundd::after {
+  content: '';
+  background: #60a9ff;
+  background: linear-gradient(to bottom, #60a9ff 0%,#4394f4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60a9ff', endColorstr='#4394f4',GradientType=0 );
+  height: 350px;
   left: 0;
-  margin-top: -16px;
-  margin-left: 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
-.product-detail {
-  padding: 0 20px;
-  font-size: 11px;
-  color: #fff;
+@media (min-width: 900px) {
+  .backgroundd {
+    padding: 0 0 25px;
+  }
 }
 
-.product-detail h2 {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  padding-bottom: 10px;
-  text-transform: uppercase;
-  margin-bottom: 0px;
+.background .container {
+  margin: 0 auto;
+  padding: 50px 0 0;
+  max-width: 960px;
+  width: 100%;
 }
 
-.back-text {
-  display: inline-block;
-  font-size: 125px;
-  font-weight: 900;
-  margin-left: -7px;
-  margin-top: -42px;
-  opacity: 0.1;
-}
-
-.card-body {
-  height: 255px;
-  background: #fff;
-  border-radius: 0 0 25px 25px;
-}
-
-.product-title {
-  padding: 20px 20px 5px 20px;
-  display: block;
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.product-title b {
-  font-weight: 900;
-  letter-spacing: 0px;
-}
-
-.badge {
+.panel {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px 25px;
   position: relative;
-  font-size: 10px;
-  font-weight: 300;
-  color: #fff;
-  background: #11e95b;
-  padding: 2px 5px;
-  border-radius: 4px;
-  top: -2px;
-  margin-left: 5px;
+  width: 100%;
+  z-index: 10;
 }
 
-.product-caption {
+.pricing-table {
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 900px) {
+  .pricing-table {
+    flex-direction: row;
+  }
+}
+
+.pricing-table * {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.pricing-plan {
+  border-bottom: 1px solid #e1f1ff;
+  padding: 25px;
+}
+
+.pricing-plan:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 900px) {
+  .pricing-plan {
+    border-bottom: none;
+    border-right: 1px solid #e1f1ff;
+    flex-basis: 100%;
+    padding: 25px 50px;
+  }
+
+  .pricing-plan:last-child {
+    border-right: none;
+  }
+}
+
+.pricing-img {
+  margin-bottom: 25px;
+  max-width: 100%;
+}
+
+.pricing-header {
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.pricing-features {
+  color: #016FF9;
+  font-weight: 600;
+  padding-left: 0px;
+  letter-spacing: 1px;
+  margin: 50px 0 25px;
+}
+
+.pricing-features-item {
+  border-top: 1px solid #e1f1ff;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 15px 0;
+}
+
+.pricing-features-item:last-child {
+  border-bottom: 1px solid #e1f1ff;
+}
+
+.pricing-price {
+  color: #016FF9;
   display: block;
-  padding: 0 20px;
-  font-size: 10px;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 700;
 }
 
-.product-rating {
-  padding: 0 20px;
-  font-size: 11px;
-}
-
-.product-rating i.grey {
-  color: #acacab;
-}
-
-.product-size h4 {
-  font-size: 11px;
-  padding: 0 21px;
-  margin-top: 15px;
-  padding-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.ul-size {
-  margin-left: 15px;
-}
-
-.ul-size li {
-  list-style: none;
-  float: left;
-  margin-right: 20px;
-}
-
-.ul-size li a {
+.pricing-button {
+  border: 1px solid #9dd1ff;
+  border-radius: 10px;
+  color: #348EFE;
   display: inline-block;
+  margin: 25px 0;
+  padding: 15px 35px;
   text-decoration: none;
-  font-size: 11px;
-  width: 22px;
-  height: 22px;
-  border-radius: 100%;
-  text-align: center;
-  line-height: 23px;
-  color: #000;
+  transition: all 150ms ease-in-out;
 }
 
-.ul-size li a.active {
-  background: #f35e3d;
+.pricing-button:hover,
+.pricing-button:focus {
+  background-color: #e1f1ff;
+}
+
+.pricing-button.is-featured {
+  background-color: #48aaff;
   color: #fff;
 }
 
-.product-size:before,
-.product-size:after {
-  content: '';
-  display: block;
-  clear: both;
+.pricing-button.is-featured:hover,
+.pricing-button.is-featured:active {
+  background-color: #269aff;
 }
-
-.product-color h4 {
-  font-size: 11px;
-  padding: 0 21px;
-  margin-top: 20px;
-  padding-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.ul-color {
-  margin-left: 27px;
-}
-
-.ul-color li {
-  list-style: none;
-  float: left;
-  margin-right: 20px;
-}
-
-.ul-color li a {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border-radius: 100%;
-}
-
-.ul-color li a.orange {
-  background: #f35e3d;
-}
-
-.ul-color li a.green {
-  background: #11e95b;
-}
-
-.ul-color li a.yellow {
-  background: #ffd414;
-}
-
-.ul-color li a.active:after {
-  position: absolute;
-  content: '';
-  display: inline-block;
-  border: 1px solid #f35e3d;
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  margin-left: -5px;
-  margin-top: -5px;
-}
-
-.product-price {
-  position: absolute;
-  background: #11e95b;
-  padding: 7px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 24px;
-  font-weight: 200;
-  color: #fff;
-  border-radius: 7px;
-  margin-top: -13px;
-  margin-left: -5px;
-  box-shadow: -10px 20px 15px -10px rgba(17, 233, 91, 0.3);
-}
-
-.product-price b {
-  margin-left: 5px;
-}
-
-
     </style>
 </head>
 <body class="page-orange">
     <div class="wrapper">
-            <div class="sidebar">
+                <div class="sidebar">
                     <div class="logo">
                         <a href="#" class="simple-text logo-mini">
                             Hi
@@ -478,8 +399,8 @@
                                     <div class="col-md-6">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5 class="card-category">注意事项</h5>
-                                                <h4 class="card-title">Matters needing attention</h4>
+                                                <h5 class="card-category">Matters needing attention</h5>
+                                                <h4 class="card-title">注意事项</h4>
                                             </div>
                                             <div class="card-body text-warn" id="list">
                                                 <div class="alert alert-info alert-with-icon" data-notify="container">
@@ -585,64 +506,54 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                            <div class="containerr">
-                                                    <div class="cardd">
-                                                      <div class="card-head">
-                                                        <img src="https://s5.postimg.cc/wy79025cz/nike_Logo_White.png" alt="logo" class="card-logo">
-                                                        <img src="https://s5.postimg.cc/j9r8yf9gn/sws1.png" alt="Shoe" class="product-img">
-                                                        <div class="product-detail">
-                                                          <h2>Hartbeespoort</h2> Support and Nike Zoom Air come together for a more supportive feel with high-speed responsiveness
+                                            <div class="backgroundd">
+                                                    <div class="container">
+                                                      <div class="panel pricing-table">
+                                                        
+                                                        <div class="pricing-plan">
+                                                          <img src="https://s22.postimg.cc/8mv5gn7w1/paper-plane.png" alt="" class="pricing-img">
+                                                          <h2 class="pricing-header">体验套餐</h2>
+                                                          <ul class="pricing-features">
+                                                            <li class="pricing-features-item">10G 免费流量</li>
+                                                            <li class="pricing-features-item">不限速端口</li>
+                                                            <li class="pricing-features-item">不限制IP</li>
+                                                          </ul>
+                                                          <span class="pricing-price">Free</span>
+                                                          <a href="javascript:void(0);" onclick="buy('1',0)" class="pricing-button">Buy up</a>
                                                         </div>
-                                                        <span class="back-text">
-                                                                FAS
-                                                              </span>
-                                                      </div>
-                                                      <div class="card-body">
-                                                        <div class="product-desc">
-                                                          <span class="product-title">
-                                                                  Hartbee<b>spoort</b>
-                                                                  <span class="badge">
-                                                                    New
-                                                                  </span>
-                                                          </span>
-                                                          <span class="product-caption">
-                                                                  Basket Ball Collection
-                                                                </span>
-                                                          <span class="product-rating">
-                                                                  <i class="fa fa-star"></i>
-                                                                  <i class="fa fa-star"></i>
-                                                                  <i class="fa fa-star"></i>
-                                                                  <i class="fa fa-star"></i>
-                                                                  <i class="fa fa-star grey"></i>
-                                                                </span>
+                                                        
+                                                        <div class="pricing-plan">
+                                                          <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="" class="pricing-img">
+                                                          <h2 class="pricing-header">乐享会员</h2>
+                                                          <ul class="pricing-features">
+                                                            <li class="pricing-features-item">流量 512 G </li>
+                                                            <li class="pricing-features-item">账号升级为等级 4 </li>
+                                                            <li class="pricing-features-item">不限速端口</li>
+                                                            <li class="pricing-features-item">不限制IP</li>
+                                                            <li class="pricing-features-item">工作时间客服接入</li>
+                                                          </ul>
+                                                          <span class="pricing-price">￥0.5</span>
+                                                          <a href="#/" class="pricing-button is-featured">Buy</a>
                                                         </div>
-                                                        <div class="product-properties">
-                                                          <span class="product-size">
-                                                                  <h4>Size</h4>
-                                                                  <ul class="ul-size">
-                                                                    <li><a href="#">7</a></li>
-                                                                    <li><a href="#">8</a></li>
-                                                                    <li><a href="#">9</a></li>
-                                                                    <li><a href="#" class="active">10</a></li>
-                                                                    <li><a href="#">11</a></li>
-                                                                  </ul>
-                                                                </span>
-                                                          <span class="product-color">
-                                                                  <h4>Colour</h4>
-                                                                  <ul class="ul-color">
-                                                                    <li><a href="#" class="orange active"></a></li>
-                                                                    <li><a href="#" class="green"></a></li>
-                                                                    <li><a href="#" class="yellow"></a></li>
-                                                                  </ul>
-                                                                </span>
-                                                          <span class="product-price">
-                                                                  USD<b>23,453</b>
-                                                                </span>
+                                                        <div class="pricing-plan">
+                                                          <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="" class="pricing-img">
+                                                          <h2 class="pricing-header">至臻会员</h2>
+                                                          <ul class="pricing-features">
+                                                            <li class="pricing-features-item">流量 1024 G </li>
+                                                            <li class="pricing-features-item">账号升级为等级 5</li>
+                                                            <li class="pricing-features-item">不限速端口</li>
+                                                            <li class="pricing-features-item">不限制IP</li>
+                                                            <li class="pricing-features-item">24小时客服接入</li>
+                                                            <li class="pricing-features-item">生日福袋</li>
+                                                          </ul>
+                                                          <span class="pricing-price">￥2</span>
+                                                          <a href="#/" class="pricing-button">Buy</a>
                                                         </div>
+                                                        
                                                       </div>
                                                     </div>
                                                   </div>
-                                             </div>
+                                                </div>
                                 </div>
                             </div>
                         </div>
