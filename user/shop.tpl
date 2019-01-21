@@ -253,28 +253,14 @@
                                             </div>
                                             <div class="card-body text-warn" id="list">
                                                 <div class="alert alert-info alert-with-icon" data-notify="container">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                                        <i class="now-ui-icons ui-1_simple-remove"></i>
-                                                    </button>
                                                     <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                                                     <span data-notify="message">商品不可叠加，新购商品会覆盖旧商品</span>
                                                 </div>
                                                 <div class="alert alert-info alert-with-icon" data-notify="container">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                                        <i class="now-ui-icons ui-1_simple-remove"></i>
-                                                    </button>
                                                     <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                                                     <span data-notify="message">购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效</span>
                                                 </div>
                                             </div>
-                                            <script language="javascript">
-                                            $(document).ready(function(){
-                                            $(".close").click(function(){
-                                            var nods = $("#list div:last");
-                                                    $(this).parent().remove();
-                                            });
-                                            });
-                                            </script>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
