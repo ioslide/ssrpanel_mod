@@ -263,127 +263,111 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                              <div class="table-responsive">
-                                              {$tickets->render()}
-                                                 <table class="table">
-                                                    <thead class=" text-primary">
-                                                        <th>Id</th>
-                                                        <th>Time</th>
-                                                        <th>Mess</th>
-                                                        <th class="text-right">state</th>
-                                                    </thead>
-                                                    {foreach $tickets as $ticket}
-                                                    <tbody>
-                                                        <tr>
-                                                            <td href="/user/ticket/{$ticket->id}/view">{$ticket->id}</td>
-                                                            <td>{$ticket->datetime()}</td>
-                                                            <td>{$ticket->title}</td>
-                                                            {if $ticket->status==1}
-                                                            <td class="text-right">服务中</td>
-                                                            {else}
-                                                            <td class="text-right">已结单</td>
-                                                            {/if}
-                                                        </tr>
-                                                        
-                                                    </tbody>
-                                                    {/foreach}
-                                                </table>
-                                                {$tickets->render()}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5 class="card-category">Line speed</h5>
-                                            <h4 class="card-title">System message</h4>
-                                        </div>
-                                        <div class="card-body text-warn" id="list">
-                                            <div class="alert alert-info alert-with-icon" data-notify="container">
-                                                <button type="button"  class="close" data-dismiss="modal" aria-hidden="true">
-                                                    <i class="now-ui-icons ui-1_simple-remove"></i>
-                                                </button>
-                                                <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
-                                                <span data-notify="message">111111111</span>
-                                            </div>
-                                            <div class="alert alert-info alert-with-icon" data-notify="container">
-                                                <button type="button"  class="close" data-dismiss="modal" aria-hidden="true">
-                                                    <i class="now-ui-icons ui-1_simple-remove"></i>
-                                                </button>
-                                                <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
-                                                <span data-notify="message">2222222</span>
-                                            </div>
-                                        </div>
-                                    <script language=javascript>
-                                    $(document).ready(function(){
-                                    $(".close").click(function(){
-                                    var nods = $("#list div:last");
-                                            $(this).parent().remove();
-                                    });
-                                    });
-                                    </script>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5 class="card-category">Dangerous operation</h5>
-                                            <h4 class="card-title">危险操作</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="alert alert-danger">
-                                                <button type="button" aria-hidden="true" class="close">
-                                                    <i class="now-ui-icons ui-1_simple-remove"></i>
-                                                </button>
-                                                <span>
-                                                    <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                                            </div>
-                                            <div class="alert alert-danger">
-                                                <button type="button" aria-hidden="true" class="close">
-                                                    <i class="now-ui-icons ui-1_simple-remove"></i>
-                                                </button>
-                                                <span>
-                                                    <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="mail">
-                                            <div class="trigger">
-                                            <label for="title"></label>
-                                            <input type="text" placeholder="请点击输入标题" id="title">
-                                            <label for="content"></label>
-                                            <textarea name="name" rows="4" cols="40" id="content"></textarea>
-                                            <button type="submit" name="button" id="submit">send</button>
-                                            </div>
-                                            <svg id="check" height="30px" version="1.1" viewBox="0 0 18 15" width="18px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
-                                                <g fill="#000000" id="Core" transform="translate(-423.000000, -47.000000)">
-                                                <g  transform="translate(423.000000, 47.500000)">
-                                                    <path id="path" d="M6,10.2 L1.8,6 L0.4,7.4 L6,13 L18,1 L16.6,-0.4 L6,10.2 Z" id="Shape"/>
-                                                </g>
-                                                </g>
-                                            </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="row">
-                                                    <div class="col-lg-8 ml-auto mr-auto">
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <button id="txButton" class="btn btn-primary btn-block" onclick="demo.showNotification('top','center')">提醒管理员处理</button>
-                                                            </div>
+                                            <main class="content">
+                                                    <div class="content-header ui-content-header">
+                                                        <div class="container">
+                                                            <h1 class="content-heading">商品列表</h1>
                                                         </div>
-            
                                                     </div>
-                                                </div>
+                                                    <div class="container">
+                                                        <div class="col-lg-12 col-sm-12">
+                                                            <section class="content-inner margin-top-no">
+                                                                
+                                                                <div class="card">
+                                                                    <div class="card-main">
+                                                                        <div class="card-inner">
+                                                                            <p>商品不可叠加，新购商品会覆盖旧商品的效果。</p>
+                                                                            <p>购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效。</p>
+                                                                            <p>当前余额：<code>{$user->money}</code> 元</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                
+                                                                <div class="table-responsive">
+                                                                    {$shops->render()}
+                                                                    <table class="table ">
+                                                                        <tr>
+                                                                            <th>套餐</th>
+                                                                            <th>价格</th>
+                                                                            <th>套餐详情</th>
+                                                                          <th>操作</th>
+                                                                            
+                                                                        </tr>
+                                                                        {foreach $shops as $shop}
+                                                                        <tr>
+                                                                            <td>{$shop->name}</td>
+                                                                            <td>{$shop->price} 元</td>
+                                                                            <td>{$shop->content()}</td>
+                                                                            <td>
+                                                                                <a class="btn btn-brand-accent" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew})">购买</a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        {/foreach}
+                                                                    </table>
+                                                                    {$shops->render()}
+                                                                </div>
+                                                                
+                                                                <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
+                                                                    <div class="modal-dialog modal-xs">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-heading">
+                                                                                <a class="modal-close" data-dismiss="modal">×</a>
+                                                                                <h2 class="modal-title">您有优惠码吗？</h2>
+                                                                            </div>
+                                                                            <div class="modal-inner">
+                                                                                <div class="form-group form-group-label">
+                                                                                    <label class="floating-label" for="coupon">有的话，请在这里输入。没有的话，直接确定吧</label>
+                                                                                    <input class="form-control" id="coupon" type="text">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">确定</button></p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div aria-hidden="true" class="modal modal-va-middle fade" id="order_modal" role="dialog" tabindex="-1">
+                                                                    <div class="modal-dialog modal-xs">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-heading">
+                                                                                <a class="modal-close" data-dismiss="modal">×</a>
+                                                                                <h2 class="modal-title">订单确认</h2>
+                                                                            </div>
+                                                                            <div class="modal-inner">
+                                                                                <p id="name">商品名称：</p>
+                                                                                <p id="credit">优惠额度：</p>
+                                                                                <p id="total">总金额：</p>
+                                                
+                                                                                <div class="checkbox switch">
+                                                                                    <label for="disableothers">
+                                                                                        <input checked class="access-hide" id="disableothers" type="checkbox">
+                                                                                        <span class="switch-toggle"></span>关闭旧套餐自动续费
+                                                                                    </label>
+                                                                                </div>
+                                                                                <br/>
+                                                                                <div class="checkbox switch" id="autor">
+                                                                                    <label for="autorenew">
+                                                                                        <input checked class="access-hide" id="autorenew" type="checkbox">
+                                                                                        <span class="switch-toggle"></span>到期时自动续费
+                                                                                    </label>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                            
+                                                                            <div class="modal-footer">
+                                                                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">确定</button></p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {include file='dialog.tpl'}
+                                                        </div>
+                                                    </div>
+                                                </main>
+                                        </div>
+                                    </div>
                                 </div>
-                                
                             </div>
                         </div>
                         <footer class="footer">
@@ -413,112 +397,8 @@
                 
                     </div>
     </div>
-<main class="content">
-    <div class="content-header ui-content-header">
-        <div class="container">
-            <h1 class="content-heading">商品列表</h1>
-        </div>
-    </div>
-    <div class="container">
-        <div class="col-lg-12 col-sm-12">
-            <section class="content-inner margin-top-no">
-                
-                <div class="card">
-                    <div class="card-main">
-                        <div class="card-inner">
-                            <p>商品不可叠加，新购商品会覆盖旧商品的效果。</p>
-                            <p>购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效。</p>
-                            <p>当前余额：<code>{$user->money}</code> 元</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="table-responsive">
-                    {$shops->render()}
-                    <table class="table ">
-                        <tr>
-                            <th>套餐</th>
-                            <th>价格</th>
-                            <th>套餐详情</th>
-                          <th>操作</th>
-                            
-                        </tr>
-                        {foreach $shops as $shop}
-                        <tr>
-                            <td>{$shop->name}</td>
-                            <td>{$shop->price} 元</td>
-                            <td>{$shop->content()}</td>
-                            <td>
-                                <a class="btn btn-brand-accent" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew})">购买</a>
-                            </td>
-                        </tr>
-                        {/foreach}
-                    </table>
-                    {$shops->render()}
-                </div>
-                
-                <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
-                    <div class="modal-dialog modal-xs">
-                        <div class="modal-content">
-                            <div class="modal-heading">
-                                <a class="modal-close" data-dismiss="modal">×</a>
-                                <h2 class="modal-title">您有优惠码吗？</h2>
-                            </div>
-                            <div class="modal-inner">
-                                <div class="form-group form-group-label">
-                                    <label class="floating-label" for="coupon">有的话，请在这里输入。没有的话，直接确定吧</label>
-                                    <input class="form-control" id="coupon" type="text">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">确定</button></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div aria-hidden="true" class="modal modal-va-middle fade" id="order_modal" role="dialog" tabindex="-1">
-                    <div class="modal-dialog modal-xs">
-                        <div class="modal-content">
-                            <div class="modal-heading">
-                                <a class="modal-close" data-dismiss="modal">×</a>
-                                <h2 class="modal-title">订单确认</h2>
-                            </div>
-                            <div class="modal-inner">
-                                <p id="name">商品名称：</p>
-                                <p id="credit">优惠额度：</p>
-                                <p id="total">总金额：</p>
-
-                                <div class="checkbox switch">
-                                    <label for="disableothers">
-                                        <input checked class="access-hide" id="disableothers" type="checkbox">
-                                        <span class="switch-toggle"></span>关闭旧套餐自动续费
-                                    </label>
-                                </div>
-                                <br/>
-                                <div class="checkbox switch" id="autor">
-                                    <label for="autorenew">
-                                        <input checked class="access-hide" id="autorenew" type="checkbox">
-                                        <span class="switch-toggle"></span>到期时自动续费
-                                    </label>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="modal-footer">
-                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">确定</button></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {include file='dialog.tpl'}
-        </div>
-    </div>
-</main>
 </body>
-{include file='user/footer.tpl'}
-
-
 <script>
 function buy(id,auto) {
 if(auto==0)
