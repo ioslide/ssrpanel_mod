@@ -519,7 +519,7 @@ ol, ul {
                                                             <li class="pricing-features-item">不限制IP</li>
                                                           </ul>
                                                           <span class="pricing-price">Free</span>
-                                                          <a href="javascript:void(0);" onclick="buy('1',0)" class="pricing-button">Buy up</a>
+                                                          <a href="javascript:void(0);" onclick="buy('1',0)" class="pricing-button">Buy</a>
                                                         </div>
                                                         
                                                         <div class="pricing-plan">
@@ -545,6 +545,11 @@ ol, ul {
                                                             <li class="pricing-features-item">不限制IP</li>
                                                             <li class="pricing-features-item">24小时客服接入</li>
                                                             <li class="pricing-features-item">生日福袋</li>
+                                                          </ul>
+                                                          <h2 class="pricing-header">加油包</h2>
+                                                          <ul class="pricing-features">
+                                                            <li class="pricing-features-item">100G 流量</li>
+                                                            <li class="pricing-features-item">一个月内有效</li>
                                                           </ul>
                                                           <span class="pricing-price">￥2</span>
                                                           <a href="#/" class="pricing-button">Buy</a>
