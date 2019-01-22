@@ -201,5 +201,4 @@ Execute the crontab -e command and add the following five segments.
 
 ![image](https://github.com/ioslide/image/blob/master/QQ截图20190117135426.jpg)
 
-![image](https://github.com/ioslide/image/blob/master/QQ截图20190117135808.jpg)
 
