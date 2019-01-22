@@ -32,7 +32,9 @@ English | [简体中文](README-zh_CN.md)
 A succinct, fast and elegant Airport
 
 ## 📦 Installation
-https://img.shields.io/github/downloads/ioslide/ssrpanel_mod/total.svg
+[![releases](https://img.shields.io/github/downloads/ioslide/ssrpanel_mod/total.svg)]
+(https://github.com/ioslide/ssrpanel_mod/releases)
+
 
 ### Setting up the environment
 
