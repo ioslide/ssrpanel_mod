@@ -281,15 +281,20 @@
     }
     .btn, .navbar .navbar-nav > a.btn{
         font-weight: 400;
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.9;
-        border: 1px solid #ffffff5c;
-        border-radius: 50%;
+        border-bottom: 1px solid #ffffff5c;
+        border-radius: 0px;
         cursor: pointer;
         background-color: #8880;
         color: #FFFFFF;
-        padding: 4.7px;
-        margin: 0px
+        margin: 5px 0 0 0 ;
+        padding: 4px 12px;
+    }
+    .btn:hover{
+        box-shadow: none;
+        background: #8880;
+        border-bottom: 1px solid #fff
     }
     .f-modal-alert .f-modal-icon{
         border-radius: 50%;
