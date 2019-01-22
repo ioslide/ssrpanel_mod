@@ -286,10 +286,13 @@
         border-bottom: 1px solid #ffffff5c;
         border-radius: 0px;
         cursor: pointer;
-        background-color: #8880;
+        background-color: #f96332;
         color: #FFFFFF;
         margin: 5px 0 0 0 ;
         padding: 4px 12px;
+    }
+    .btn, .navbar .navbar-nav > a.btn:hover{
+        background-color: #e04918;
     }
     .btn:hover{
         box-shadow: none;
@@ -307,11 +310,29 @@
         position: absolute;
         width: 80px;
     }
+    .form-control {
+        background-color: transparent;
+        border-bottom: 1px solid #ffffff;
+        border-radius: 0PX;
+        color: #2c2c2c;
+        line-height: normal;
+        font-size: 0.8571em;
+        -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
     .form-group .form-control, .input-group .form-control{
         padding: 10px 20px 10px 20px;
+        border-radius: 0px;
         color:#fff
     }
-
+    .form-control:focus{
+        color: #000
+    }
+    .alterttt{
+        margin: 140px 0 0 20px
+    }
         </style>
     </head>
     <body class="page-orange">
@@ -528,11 +549,11 @@
                                                     <h4 class="card-title">注意事项</h4>
                                                 </div>
                                                 <div class="card-body text-warn" id="list">
-                                                    <div class="alert alert-info alert-with-icon" data-notify="container">
+                                                    <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;">
                                                         <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                                                         <span data-notify="message">商品不可叠加，新购商品会覆盖旧商品</span>
                                                     </div>
-                                                    <div class="alert alert-info alert-with-icon" data-notify="container">
+                                                    <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;">
                                                         <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                                                         <span data-notify="message">购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效</span>
                                                     </div>
@@ -586,33 +607,28 @@
                                                 <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
 
                                                     <div class="modal-dialog modal-xs">
-                                                            <div class="alterttt">
-                                                                <div class="f-modal-alert" id="box" data-dismiss="modal">
-                                                                    <div class="f-modal-icon f-modal-success animate">
-                                                                        <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
-                                                                        <span class="f-modal-line f-modal-long animateSuccessLong"></span>
-                                                                        <div class="f-modal-placeholder"></div>
-                                                                        <div class="f-modal-fix"></div>
-                                                                    </div>
-                                                                </div>
                                                                 <div class="modal-content">
-                                                                    <div class="modal-inner">
-                                                                        <p class="h5 margin-top-sm text-black-hint" id="msg">请输入优惠码</p>
-                                                                        <div class="form-group form-group-label">
-                                                                                <input class="form-control" id="coupon" type="text">
-                                                                                <p class="textt-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">OK</button></p>
+
+                                                                        <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <h5 class="card-category">Please enter the discount code</h5>
+                                                                                    <h4 class="card-title" style="color: #000;">请输入优惠码</h4>
+                                                                                </div>
+                                                                                <div class="card-body text-warn" id="list">
+                                                                                    <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;" >
+                                                                                        <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                                                        <input class="form-control" id="coupon" type="text">
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                            <div class="col-md-4" >
+                                                                                                <button class="alert alert-danger" data-dismiss="modal" id="coupon_input" style="width: 100%;">OK</button>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                    <a class="modal-close" data-dismiss="modal">×</a>
+                                                                                </div>
                                                                             </div>
-                                                                    </div>
-                                                                </div>
                                                             </div>
                                                         </div>
-
-
-
-
-
-
-
 
                                                     <svg id="radar-circle">
                                                         <circle cx="50%" cy="50%" r="1069.39" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.1">
@@ -639,34 +655,44 @@
                                                 <div aria-hidden="true" class="modal modal-va-middle fade" id="order_modal" role="dialog" tabindex="-1">
                                                     <div class="modal-dialog modal-xs">
                                                         <div class="modal-content">
-                                                            <div class="modal-heading">
-                                                                <a class="modal-close" data-dismiss="modal">×</a>
-                                                                <h2 class="modal-title">订单确认</h2>
-                                                            </div>
-                                                            <div class="modal-inner">
-                                                                <p id="name">商品名称：</p>
-                                                                <p id="credit">优惠额度：</p>
-                                                                <p id="total">总金额：</p>
-                                
-                                                                <div class="checkbox switch">
-                                                                    <label for="disableothers">
-                                                                        <input checked class="access-hide" id="disableothers" type="checkbox">
-                                                                        <span class="switch-toggle"></span>关闭旧套餐自动续费
-                                                                    </label>
-                                                                </div>
-                                                                <br/>0
-                                                                <div class="checkbox switch" id="autor">
-                                                                    <label for="autorenew">
-                                                                        <input checked class="access-hide" id="autorenew" type="checkbox">
-                                                                        <span class="switch-toggle"></span>到期时自动续费
-                                                                    </label>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                            
-                                                            <div class="modal-footer">
-                                                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">OK</button></p>
-                                                            </div>
+                                                                <div class="card">
+                                                                        <div class="card-header">
+                                                                            <h5 class="card-category">Matters needing attention</h5>
+                                                                            <h4 class="card-title" style="color: #000;">注意事项</h4>
+                                                                        </div>
+                                                                        <div class="card-body text-warn" id="list">
+                                                                            <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;" >
+                                                                                <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                                                <span data-notify="message" id="name">商品不可叠加，新购商品会覆盖旧商品</span>
+                                                                            </div>
+                                                                            <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;">
+                                                                                <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                                                <span data-notify="message" id="credit">购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效</span>
+                                                                            </div>
+                                                                            <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;">
+                                                                                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                                                    <span data-notify="message" id="total">购买新套餐时，如果未关闭旧套餐自动续费，则旧套餐的自动续费依然生效</span>
+                                                                             </div>
+                                                                             <div class="checkbox switch">
+                                                                                    <label for="disableothers">
+                                                                                        <input checked class="access-hide" id="disableothers" type="checkbox">
+                                                                                        <span class="switch-toggle"></span>关闭旧套餐自动续费
+                                                                                    </label>
+                                                                            </div>
+                                                                            <div class="checkbox switch" id="autor">
+                                                                                    <label for="autorenew">
+                                                                                        <input checked class="access-hide" id="autorenew" type="checkbox">
+                                                                                        <span class="switch-toggle"></span>到期时自动续费
+                                                                                    </label>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                    <div class="col-md-4" >
+                                                                                        <button class="alert alert-danger" data-dismiss="modal" id="order_input" style="width: 100%;">OK</button>
+                                                                                    </div>
+                                                                            </div>
+                                                                            <a class="modal-close" data-dismiss="modal">×</a>
+                                                                        </div>
+                                                                    </div>
                                                         </div>
                                                     </div>
                                                 </div>
