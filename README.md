@@ -9,7 +9,7 @@ ssrpanel_mod
 	
 [![Build Status](https://travis-ci.org/philc/vimium.svg?branch=master)](https://xhy.im)
 [![License](https://img.shields.io/github/license/ssrpanel/SSRPanel.svg)](https://xhy.im/legal-notice/index.html)
-[![downloads](http://img.shields.io/npm/dm/antd.svg?style=flat-square)](https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/)
+[![downloads](https://img.shields.io/github/downloads/ioslide/ssrpanel_mod/BETA1.11/total.svg)](https://github.com/ioslide/ssrpanel_mod/releases)
 
 </div>
 
