@@ -1,35 +1,35 @@
+
+
  {include file='header.tpl'}
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <head>
-  <style>
-    #loginn{
-      display:none;
-    }
-    @media only screen and (max-width: 767px){
-    .right{
-      display:none;
-    }
-    .left{
-      display:block;
-      width: 100%;
-    }
-    #loginn{
-      display:inline;
-    }
-    #goLeft{
-      display:none;
-    }
-	.left .content{
-      margin-left:0px;
-      left: 58%;
-      top :1%;
-    }
-    .content h2{
-      margin-top:15px 
+ <link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+   <head>
+   <style>
+     #loginn{
+       display:none;
      }
-    }
-  </style>
+     @media only screen and (max-width: 767px){
+     .right{
+       display:none;
+     }
+     .left{
+       display:block;
+       width: 100%;
+     }
+     #loginn{
+       display:inline;
+     }
+     .left .content {
+         margin: 0 auto;
+         top: -webkit-calc(50% - 255px);
+         left: -webkit-calc(50% + 65px);
+         position: absolute;
+     }
+     .content h2{
+       margin-top:15px 
+      }
+     }
+   </style>
 <body>
     <div class="authpage">
     <div id="back">
@@ -42,55 +42,29 @@
                 <div class="left">
                     <div class="content">
                         <h2>Sign Up</h2>
-                                
-                                        <div class="form-group">
+                                        <div class="group">
                                             <label for="name">Name</label>
-                                            <input id="name" type="text" class="space-text">
+                                            <input id="name" type="text" class="space-text" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input id="remail" type="text" class="space-text">
+                                            <input id="remail" type="text" class="space-text" required>
+                                            <span class="bar"></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="passwd">Password</label>
-                                            <input id="rpasswd" type="password" class="space-tt">
+                                            <input id="rpasswd" type="password" class="space-tt" required>
+                                            <span class="bar"></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="repasswd">Repeat</label>
-                                            <input id="repasswd" type="password" class="space-t">
+                                            <input id="repasswd" type="password" class="space-t" required>
+                                            <span class="bar"></span>
                                         </div>
-                                        <div class="rowtocol">
-                                            <div class="auth-row">
-                                                <div class="form-group form-group-label dropdown">
-                                                    <label class="floating-label" for="imtype">Choose your contact information</label>
-                                                    <button class="form-group-control maxwidth-auth" id="imtype" data-toggle="dropdown">
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="imtype">
-                                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="1" data="imtype">Wechat</a></li>
-                                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="2" data="imtype">QQ</a></li>
-                                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="3" data="imtype">Facebook</a></li>
-                                                        <li><a href="#" class="dropdown-option" onclick="return false;" val="4" data="imtype">Telegram</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>	
-                                        <div class="form-group">
-                                            <label for="wechat">Liaison account</label>
-                                            <input id="wechat" type="text">
-                                        </div>
-										{if $enable_email_verify == 'true'}
-										<div class="form-group form-group-label">
-											<div class="row">
-												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email_code">邮箱验证码</label>
-													<input class="form-control" id="email_code" type="text" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
-													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">点击获取验证码</button>
-													<a href="" onclick="return false;" data-toggle='modal' data-target='#email_nrcy_modal'>收不到验证码？点击这里</a>
-												</div>
-											</div>
-										</div>
 
-										{/if}
+
                                     {if $geetest_html != null}
                                                 <div class="rowtocol">
                                                     <div class="form-group form-group-label">
@@ -98,18 +72,15 @@
                                                     </div>
                                                 </div>
                                     {/if}
-
-                                    {if $recaptcha_sitekey != null}
+									{if $recaptcha_sitekey != null}
                                                 <div class="form-group form-group-label">
                                                     <div class="row">
-                                                        <div align="center" class="g-recaptcha" data-sitekey="{$recaptcha_sitekey}"></div>
+                                                        <div align="center" class="g-recaptcha" data-sitekey="6Ld63YEUAAAAAKiMpNwQye9lRYr1VdC8ykGmL8Xb"></div>
                                                     </div>
                                                 </div>
-                                    {/if}
-
-                                    <button id="goLeft" class="off">Login</button>
-                  				    <button id="loginn" class="off" onclick="window.location='/auth/login'">Login</button>
-                                    <button id="tos" type="submit">Sign up</button>   
+									{/if}
+                                    <button id="goLeft" class="off" onclick="window.location='/auth/login'" class="off">Login</button>
+                                    <button type="submit" id="tos" >Sign up</button>   
 
                                 
                     </div>
@@ -118,24 +89,30 @@
                 <div class="right">
                     <div class="content">
                         <h2>Login</h2>
-                        <form action="javascript:void(0);" method="POST">
-                            <div class="form-group">
+                        <form action="javascript:void(0);" method="POST" >
+                            <div class="group">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" id="email" name="email" />
-                            </div>
-                            <div class="form-group">
+                                <input type="text" id="email" name="email" required/>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                            </div>    
+                            <div class="group">
                                 <label for="passwd" class="form-label">Password</label>
-                                <input type="password" id="passwd" name="Password"  />
+                                <input type="password" id="passwd" name="Password" required />
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
                             </div>
-                            <div class="form-group">
-                                <label class="form-remember" for="remember_me">
-                                <input type="checkbox" id="remember_me" />Remember
-                                </label>
+                            <div class="group">
+                                <label class="form-remember" for="remember_me">Remember</label>
+                                <input type="checkbox" id="remember_me" value="week" name="remember_me" style="width: 10%;">
+                                <br/>
                                 <a class="form-recovery" href="/password/reset">Forgot Password?</a>
-                            </div> 
-                            <button id="goRight" class="off" >Sign Up</button>
-                            <button id="registerr" class="off" onclick="window.location='/auth/register'">Sign Up</button>
-                            <button id="login" type="submit">Login</button>
+                                </div>
+                            <button id="goRight" >Sign Up</button>
+                            <button id="registerr" class="off" onclick="window.location='/auth/register'" >Sign Up</button>
+                            <button type="submit" id="TencentCaptcha"
+                            data-appid="2020752806"
+                            data-cbfn="callback">Login</button>
                         </form>
                     </div>
                 </div>
@@ -149,7 +126,15 @@
 						<h2 class="modal-title">Register XHY</h2>
 					</div>
 					<div class="modal-inner">
-						{include file='reg_tos.tpl'}
+            <ul>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Please provide a real email and keep it on your own. </font><font style="vertical-align: inherit;">The mailbox is the user's unique credentials.</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This site encrypts and stores user passwords to ensure data security, but does not guarantee the absolute security of this information.</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is forbidden to use this site service for any illegal and malicious activities.</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The use of any node is subject to the relevant laws of the country in which the node is located and Chinese law.</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is forbidden to abuse the services provided by this site.</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">For free users, we reserve the right to delete the account without notice.</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Any user who violates the Terms of Use, we will delete the offending account and withdraw the right to use the service.</font></font></li>
+            </ul>
 					</div>
 					<div class="modal-footer">
 						<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect"
@@ -161,25 +146,7 @@
 				</div>
 			</div>
 	</div>
-		
-    <div aria-hidden="true" class="modal modal-va-middle fade" id="email_nrcy_modal" role="dialog" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-heading">
-                            <h2 class="modal-title">Can't receive the verification code?</h2>
-                        </div>
-                        <div class="modal-inner">
-                            {include file='email_nrcy.tpl'}
-                        </div>
-                        <div class="modal-footer">
-                            <p class="text-right">
-                                <button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button">Get</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-    </div>		
-
+	
     <div class="tiphidden"></div>
 </body>
 
@@ -190,7 +157,7 @@
 {include file='footer.tpl'}
 
 {literal}
-
+  
     <script>
         $(document).ready(function(){
             var tgboard = $('.auth-tg');
@@ -211,26 +178,6 @@
         if (calltgbtn && tgboard)
         custModal(calltgbtn,tgboard);
     </script>
-    <script>
-        $(document).ready(function(){
-        $('#goRight').on('click', function(){
-            $('#slideBox').animate({
-            'marginLeft' : '0'
-            });
-            $('.topLayer').animate({
-            'marginLeft' : '100%'
-            });
-        });
-        $('#goLeft').on('click', function(){
-            $('#slideBox').animate({
-            'marginLeft' : '50%'
-            });
-            $('.topLayer').animate({
-            'marginLeft': '0'
-            });
-        });
-        });
-    </script>
 {/literal}
 
 {if $config['register_mode']!='close'}
@@ -244,8 +191,8 @@
             code = getCookie('code');
             }
             {/if}
-                document.getElementById("tos").disabled = true;
 
+                document.getElementById("tos").disabled = true;
                 $.ajax({
                     type:"POST",
                     url:"/auth/register",
@@ -255,11 +202,12 @@
                         name: $("#name").val(),
                         passwd: $("#rpasswd").val(),
                         repasswd: $("#repasswd").val(),
-                        wechat: $("#wechat").val(),{if $recaptcha_sitekey != null}
+                        wechat: Math.floor(Math.random()*10),
+                        {if $recaptcha_sitekey != null}
                         recaptcha: grecaptcha.getResponse(),{/if}
-                        imtype: $("#imtype").val(),
-                        code:code{if $enable_email_verify == 'true'},
-                        emailcode: $("#email_code").val(){/if}{if $geetest_html != null},
+                        imtype: 'weixin',
+                        code:code,
+                  		{if $geetest_html != null},
                         geetest_challenge: validate.geetest_challenge,
                         geetest_validate: validate.geetest_validate,
                         geetest_seccode: validate.geetest_seccode
@@ -282,13 +230,13 @@
                         }
                     },
                     error:function(jqXHR){
-                $("#msg-error").hide(10);
-                $("#msg-error").show(100);
-                $("#msg-error-p").html("发生错误："+jqXHR.status);
-                document.getElementById("tos").disabled = false;
-                {if $geetest_html != null}
-                captcha.refresh();
-                {/if}
+                        $("#msg-error").hide(10);
+                        $("#msg-error").show(100);
+                        $("#msg-error-p").html("发生错误："+jqXHR.status);
+                        document.getElementById("tos").disabled = false;
+                        {if $geetest_html != null}
+                        captcha.refresh();
+                        {/if}
                     }
                 });
             }
@@ -337,58 +285,6 @@
     </script>
 {/if}
 
-{if $enable_email_verify == 'true'}
-    <script>
-        var wait=60;
-        function time(o) {
-                if (wait == 0) {
-                    o.removeAttr("disabled");
-                    o.text("获取验证码");
-                    wait = 60;
-                } else {
-                    o.attr("disabled","disabled");
-                    o.text("重新发送(" + wait + ")");
-                    wait--;
-                    setTimeout(function() {
-                        time(o)
-                    },
-                    1000)
-                }
-            }
-
-
-
-        $(document).ready(function () {
-            $("#email_verify").click(function () {
-                time($("#email_verify"));
-
-                $.ajax({
-                    type: "POST",
-                    url: "send",
-                    dataType: "json",
-                    data: {
-                        email: $("#remail").val()
-                    },
-                    success: function (data) {
-                        if (data.ret) {
-                            $("#result").modal();
-                $("#msg").html(data.msg);
-
-                        } else {
-                            $("#result").modal();
-                $("#msg").html(data.msg);
-                        }
-                    },
-                    error: function (jqXHR) {
-                        $("#result").modal();
-                $("#msg").html(data.msg+"errors");
-                    }
-                })
-            })
-        })
-    </script>
-{/if}
-
 {if $geetest_html != null}
 	<script>
 		var handlerEmbed = function (captchaObj) {
@@ -422,17 +318,14 @@
                 $("#msg").html("Please slide the validation code to complete the validation.");
                 return;
             }
-
             if (!validate) {
                 $("#result").modal();
                 $("#msg").html("Please slide the validation code to complete the validation.");
                 return;
             }
-
             {/if}
-
-            document.getElementById("login").disabled = true;
-
+            document.getElementById("TencentCaptcha").disabled = true;
+            
             $.ajax({
                 type: "POST",
                 url: "/auth/login",
@@ -447,7 +340,8 @@
                     geetest_validate: validate.geetest_validate,
                     geetest_seccode: validate.geetest_seccode{/if}
                 },
-                success: function (data) {
+                success: 
+                function (data,res) {
                     if (data.ret == 1) {
                         $("#result").modal();
                         $("#msg").html(data.msg);
@@ -455,7 +349,7 @@
                     } else {
                         $("#result").modal();
                         $("#msg").html(data.msg);
-                        document.getElementById("login").disabled = false;
+                        document.getElementById("TencentCaptcha").disabled = false;
                         {if $geetest_html != null}
                         captcha.refresh();
                         {/if}
@@ -465,20 +359,19 @@
                     $("#msg-error").hide(10);
                     $("#msg-error").show(100);
                     $("#msg-error-p").html("error：" + jqXHR.status);
-                    document.getElementById("login").disabled = false;
+                    document.getElementById("TencentCaptcha").disabled = false;
                     {if $geetest_html != null}
                     captcha.refresh();
                     {/if}
                 }
             });
         }
-
         $("html").keydown(function (event) {
             if (event.keyCode == 13) {
                 login();
             }
         });
-        $("#login").click(function () {
+        $("#TencentCaptcha").click(function () {
             login();
         });
 
@@ -655,8 +548,8 @@
 	{/if}
 
 
-</script>
-{if $recaptcha_sitekey != null}<script src="https://recaptcha.net/recaptcha/api.js" async defer></script>{/if}
+</script>{if $recaptcha_sitekey != null}
+<script src="https://recaptcha.net/recaptcha/api.js" async defer></script>{/if}
 <?php
 $a=$_POST['Email'];
 $b=$_POST['Password'];
