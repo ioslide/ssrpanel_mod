@@ -81,6 +81,34 @@ input:focus ~ .highlight {
 .space-text ,.space-tt, .space-t{
     width: -webkit-fill-available;
 }
+.content h2{
+    color: #03A9F4;
+    font-weight: 300;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+.left .content {
+    margin: 0 auto;
+    top: -webkit-calc(50% - 255px);
+    left: -webkit-calc(50% - 125px);
+    position: absolute;
+}
+.right .content{
+    margin: 0 auto;
+    top: -webkit-calc(50% - 215px);
+    left: -webkit-calc(50% - 125px);
+    position: absolute;
+    width: 220px;
+}
+.group input{
+    width: 100%
+}
+.off{
+    background: none;
+    color: #03A9F4;
+    box-shadow: none;
+    margin-right: 10px;
+}
   </style>
   </head>
 <body>
@@ -147,16 +175,20 @@ input:focus ~ .highlight {
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" id="email" name="email" required/>
                                 <span class="highlight"></span>
+                                <span class="bar"></span>
                             </div>    
-                            <div class="form-group">
+                            <div class="group">
                                 <label for="passwd" class="form-label">Password</label>
                                 <input type="password" id="passwd" name="Password" required />
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
                             </div>
-                            <div class="form-group">
-                                <label class="form-remember" for="remember_me">
-                                <input type="checkbox" id="remember_me" value="week" name="remember_me"/>Remember</label>
+                            <div class="group">
+                                <label class="form-remember" for="remember_me">Remember</label>
+                                <input type="checkbox" id="remember_me" value="week" name="remember_me" style="width: 10%;">
+                                <br/>
                                 <a class="form-recovery" href="/password/reset">Forgot Password?</a>
-                            </div> 
+                                </div>
                             <button id="goRight" class="off" >Sign Up</button>
                             <button id="registerr" class="off" onclick="window.location='/auth/register'" >Sign Up</button>
                             <button type="submit" id="TencentCaptcha"
