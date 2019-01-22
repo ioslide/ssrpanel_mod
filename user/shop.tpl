@@ -313,6 +313,9 @@
     .form-control {
         background-color: transparent;
         border-bottom: 1px solid #ffffff;
+        border-left:none;
+        border-top:none;
+        border-right:none;
         border-radius: 0PX;
         color: #2c2c2c;
         line-height: normal;
@@ -605,10 +608,8 @@
                                                 </div>
                                             </div>
                                                 <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
-
                                                     <div class="modal-dialog modal-xs">
                                                                 <div class="modal-content">
-
                                                                         <div class="card">
                                                                                 <div class="card-header">
                                                                                     <h5 class="card-category">Please enter the discount code</h5>
