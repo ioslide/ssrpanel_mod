@@ -5,10 +5,16 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
    <head>
    <style>
+     .authpage{
+      display:none;
+     }
      #loginn{
        display:none;
      }
      @media only screen and (max-width: 767px){
+      .authpage{
+      display:block;
+     }
      .right{
        display:none;
      }
