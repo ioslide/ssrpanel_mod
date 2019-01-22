@@ -1,7 +1,88 @@
 {include file='header.tpl'}
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+  * { box-sizing:border-box; }
+/* form starting stylings ------------------------------- */
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+
+input:focus{ outline:none; }
+
+/* LABEL ======================================= */
+
+/* active state */
+ input:focus ~  label,  input:valid ~  label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:100%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:0%;
+}
+.bar:after {
+  right:0%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 42px;
+    width: 100px;
+    top: 33%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+.space-text ,.space-tt, .space-t{
+    width: -webkit-fill-available;
+}
+  </style>
+  </head>
 <body>
     <div class="authpage">
     <div id="back">
@@ -14,21 +95,26 @@
                 <div class="left">
                     <div class="content">
                         <h2>Sign Up</h2>
-                                        <div class="form-group">
+                                        <div class="group">
                                             <label for="name">Name</label>
-                                            <input id="name" type="text" class="space-text">
+                                            <input id="name" type="text" class="space-text" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input id="remail" type="text" class="space-text">
+                                            <input id="remail" type="text" class="space-text" required>
+                                            <span class="bar"></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="passwd">Password</label>
-                                            <input id="rpasswd" type="password" class="space-tt">
+                                            <input id="rpasswd" type="password" class="space-tt" required>
+                                            <span class="bar"></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="repasswd">Repeat</label>
-                                            <input id="repasswd" type="password" class="space-t">
+                                            <input id="repasswd" type="password" class="space-t" required>
+                                            <span class="bar"></span>
                                         </div>
 
 
@@ -57,18 +143,18 @@
                     <div class="content">
                         <h2>Login</h2>
                         <form action="javascript:void(0);" method="POST" >
-                            <div class="form-group">
+                            <div class="group">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" id="email" name="email" />
-                            </div>
+                                <input type="text" id="email" name="email" required/>
+                                <span class="highlight"></span>
+                            </div>    
                             <div class="form-group">
                                 <label for="passwd" class="form-label">Password</label>
-                                <input type="password" id="passwd" name="Password"  />
+                                <input type="password" id="passwd" name="Password" required />
                             </div>
                             <div class="form-group">
                                 <label class="form-remember" for="remember_me">
-                                <input type="checkbox" id="remember_me" value="week" name="remember_me"/>Remember
-                                </label>
+                                <input type="checkbox" id="remember_me" value="week" name="remember_me"/>Remember</label>
                                 <a class="form-recovery" href="/password/reset">Forgot Password?</a>
                             </div> 
                             <button id="goRight" class="off" >Sign Up</button>
