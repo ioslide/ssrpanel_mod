@@ -212,6 +212,101 @@
     .col-md-6{
         margin-bottom: 10px;
     }
+
+    #box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    color: white;
+    border-radius: 50%;
+    font-family: 'Raleway';
+    font-size: 1rem;
+    }
+    .gradient-border {
+    --borderWidth: 2px;
+    background: #757575;
+    position: relative;
+    border-radius: var(--borderWidth);
+    }
+    .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #6e85c2, #3644bd, #e7ccd3, #a166ab, #93a9d6, #d8e8eb, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    border-radius: 50%;
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+            animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+    }
+
+
+    @-webkit-keyframes animatedgradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+
+    @keyframes animatedgradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    .textt-right{
+        margin-top: 0;
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 32px;
+        margin-bottom: 0px;
+    }
+    .btn, .navbar .navbar-nav > a.btn{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.9;
+        border: 1px solid #ffffff5c;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #8880;
+        color: #FFFFFF;
+        padding: 4.7px;
+        margin: 0px
+    }
+    .f-modal-alert .f-modal-icon{
+        border-radius: 50%;
+        border: 4px solid gray;
+        box-sizing: content-box;
+        height: 80px;
+        top: 0px;
+        left: 0px;
+        margin: 28% 29% 28% 30%;
+        position: absolute;
+        width: 80px;
+    }
+    .form-group .form-control, .input-group .form-control{
+        padding: 10px 20px 10px 20px;
+        color:#fff
+    }
+
         </style>
     </head>
     <body class="page-orange">
@@ -484,19 +579,36 @@
                                                 </div>
                                             </div>
                                                 <div aria-hidden="true" class="modal modal-va-middle fade" id="coupon_modal" role="dialog" tabindex="-1">
+
                                                     <div class="modal-dialog modal-xs">
-                                                        <div class="modal-content">
-                                                            <div class="modal-inner">
-                                                                <div class="form-group form-group-label">
-                                                                    <label class="floating-label" for="coupon">请输入优惠码</label>
-                                                                    <input class="form-control" id="coupon" type="text">
+                                                            <div class="alterttt">
+                                                                <div class="f-modal-alert" id="box" data-dismiss="modal">
+                                                                    <div class="f-modal-icon f-modal-success animate">
+                                                                        <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
+                                                                        <span class="f-modal-line f-modal-long animateSuccessLong"></span>
+                                                                        <div class="f-modal-placeholder"></div>
+                                                                        <div class="f-modal-fix"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-content">
+                                                                    <div class="modal-inner">
+                                                                        <p class="h5 margin-top-sm text-black-hint" id="msg">请输入优惠码</p>
+                                                                        <div class="form-group form-group-label">
+                                                                                <input class="form-control" id="coupon" type="text">
+                                                                                <p class="textt-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">OK</button></p>
+                                                                            </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="modal-footer">
-                                                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="coupon_input" type="button">确定</button></p>
-                                                            </div>
                                                         </div>
-                                                    </div>
+
+
+
+
+
+
+
+
                                                     <svg id="radar-circle">
                                                         <circle cx="50%" cy="50%" r="1069.39" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.1">
                                                             <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="0.15s"></animate>
@@ -537,7 +649,7 @@
                                                                         <span class="switch-toggle"></span>关闭旧套餐自动续费
                                                                     </label>
                                                                 </div>
-                                                                <br/>
+                                                                <br/>0
                                                                 <div class="checkbox switch" id="autor">
                                                                     <label for="autorenew">
                                                                         <input checked class="access-hide" id="autorenew" type="checkbox">
@@ -548,7 +660,7 @@
                                                             </div>
                                                             
                                                             <div class="modal-footer">
-                                                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">确定</button></p>
+                                                                <p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="order_input" type="button">OK</button></p>
                                                             </div>
                                                         </div>
                                                     </div>
