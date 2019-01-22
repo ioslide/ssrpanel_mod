@@ -8,7 +8,7 @@
 /* form starting stylings ------------------------------- */
 .group 			  { 
   position:relative; 
-  margin-bottom:45px; 
+  margin-bottom:25px; 
 }
 
 input:focus{ outline:none; }
@@ -104,11 +104,12 @@ input:focus ~ .highlight {
     width: 100%
 }
 .off{
-    background: none;
+    background: #03a9f40d;
     color: #03A9F4;
     box-shadow: none;
     margin-right: 10px;
 }
+
   </style>
   </head>
 <body>
