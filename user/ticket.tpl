@@ -371,19 +371,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                                        <div class="col-lg-8 ml-auto mr-auto">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <button id="txButton" class="btn btn-primary btn-block" onclick="demo.showNotification('top','center')">提醒管理员处理</button>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                    </div>
-                    
                 </div>
             </div>
             <footer class="footer">
