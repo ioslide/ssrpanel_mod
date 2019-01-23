@@ -10,7 +10,6 @@
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
         <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
         <!--     Fonts and icons     -->
-
         <link href="/theme/material/css/project.min.css" rel="stylesheet">
         <link href="/theme/material/css/auth.css" rel="stylesheet">
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -39,123 +38,170 @@
         <script src="https://js.ioslide.com/ssr/assets/js/now-ui-dashboard.js?v=1.0.1"></script>
         <!-- svg -->
         <script src='http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js'></script>
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* form starting stylings ------------------------------- */
+        .group {
+            position: relative;
+            margin-bottom: 25px;
+        }
 
-  <style>
-  * { box-sizing:border-box; }
-/* form starting stylings ------------------------------- */
-.group 			  { 
-  position:relative; 
-  margin-bottom:25px; 
-}
-.left .content label{
-    color:#fff
-}
-input:focus{ outline:none; }
+        input:focus {
+            outline: none;
+        }
 
-/* LABEL ======================================= */
+        /* LABEL ======================================= */
 
-/* active state */
- input:focus ~  label,  input:valid ~  label 		{
-  top:-20px;
-  font-size:14px;
-  color:#5264AE;
-}
+        /* active state */
+        input:focus ~  label,  input:valid ~  label {
+            top: -20px;
+            font-size: 14px;
+            color: #5264AE;
+        }
 
-/* BOTTOM BARS ================================= */
-.bar 	{ position:relative; display:block; width:100%; }
-.bar:before, .bar:after 	{
-  content:'';
-  height:2px; 
-  width:0;
-  bottom:1px; 
-  position:absolute;
-  background:#5264AE; 
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-}
-.bar:before {
-  left:0%;
-}
-.bar:after {
-  right:0%; 
-}
+        /* BOTTOM BARS ================================= */
+        .bar {
+            position: relative;
+            display: block;
+            width: 100%;
+        }
 
-/* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
-  width:50%;
-}
+        .bar:before, .bar:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: #5264AE;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
 
-/* HIGHLIGHTER ================================== */
-.highlight {
-    position: absolute;
-    height: 42px;
-    width: 100px;
-    top: 33%;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.3;
-}
+        .bar:before {
+            left: 0%;
+        }
 
-/* active state */
-input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
-}
+        .bar:after {
+            right: 0%;
+        }
 
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-.space-text ,.space-tt, .space-t{
-    width: -webkit-fill-available;
-}
-.content h2{
-    color: #03A9F4;
-    font-weight: 300;
-    font-size: 35px;
-    margin-bottom: 40px;
-}
-.left .content {
-    margin: 0 auto;
-    top: -webkit-calc(50% - 255px);
-    left: -webkit-calc(50% - 125px);
-    position: absolute;
-}
-.right .content{
-    margin: 0 auto;
-    top: -webkit-calc(50% - 215px);
-    left: -webkit-calc(50% - 125px);
-    position: absolute;
-    width: 220px;
-}
-.group input{
-    width: 100%
-}
-.off{
-    background: #03a9f40d;
-    color: #03A9F4;
-    box-shadow: none;
-    margin-right: 10px;
-}
-@media only screen and (max-width: 767px){
-.left .content {
-    margin: 0 auto;
-    top: -webkit-calc(50% - 255px);
-    left: -webkit-calc(50% + 65px);
-    position: absolute;
-}
-}
+        /* active state */
+        input:focus ~ .bar:before, input:focus ~ .bar:after {
+            width: 50%;
+        }
+
+        /* HIGHLIGHTER ================================== */
+        .highlight {
+            position: absolute;
+            height: 30px;
+            width: 100px;
+            top: 45%;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        /* active state */
+        input:focus ~ .highlight {
+            -webkit-animation: inputHighlighter 0.3s ease;
+            -moz-animation: inputHighlighter 0.3s ease;
+            animation: inputHighlighter 0.3s ease;
+        }
+
+        /* ANIMATIONS ================ */
+        @-webkit-keyframes inputHighlighter {
+            from {
+                background: #5264AE;
+            }
+
+            to {
+                width: 0;
+                background: transparent;
+            }
+        }
+
+        @-moz-keyframes inputHighlighter {
+            from {
+                background: #5264AE;
+            }
+
+            to {
+                width: 0;
+                background: transparent;
+            }
+        }
+
+        @keyframes inputHighlighter {
+            from {
+                background: #5264AE;
+            }
+
+            to {
+                width: 0;
+                background: transparent;
+            }
+        }
+
+        .space-text ,.space-tt, .space-t {
+            width: -webkit-fill-available;
+        }
+
+        .content h2 {
+            color: #03A9F4;
+            font-weight: 300;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+        .content .form-group{
+            font-size: 12px;
+        }
+        .content .form-group input{
+            font-size: inherit;
+            padding: 6px 0px;
+        }
+        .content  button{
+            font-size: 12px;
+        }
+        .left .content {
+            margin: 0 auto;
+            top: -webkit-calc(50% - 215px);
+            left: -webkit-calc(50% - 125px);
+            position: absolute;
+            width: 210px;
+        }
+        .left .content label {
+            color: #fff
+        }
+        .right .content {
+            margin: 0 auto;
+            top: -webkit-calc(50% - 215px);
+            left: -webkit-calc(50% - 125px);
+            position: absolute;
+            width: 220px;
+        }
+
+        .group input {
+            width: 100%
+        }
+
+        .off {
+            background: #03a9f40d;
+            color: #03A9F4;
+            box-shadow: none;
+            margin-right: 10px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .left .content {
+                margin: 0 auto;
+                top: -webkit-calc(50% - 255px);
+                left: -webkit-calc(50% + 65px);
+                position: absolute;
+            }
+        }
   </style>
   </head>
 <body>
@@ -170,7 +216,7 @@ input:focus ~ .highlight {
                 <div class="left">
                     <div class="content">
                         <h2>Sign Up</h2>
-                                        <div class="group">
+                                        <div class="form-group">
                                             <label for="name">Name</label>
                                             <input id="name" type="text" class="space-text" required>
                                             <span class="highlight"></span>
@@ -186,7 +232,7 @@ input:focus ~ .highlight {
                                             <input id="rpasswd" type="password" class="space-tt" required>
                                             <span class="bar"></span>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="margin-bottom: 20px;">
                                             <label for="repasswd">Repeat</label>
                                             <input id="repasswd" type="password" class="space-t" required>
                                             <span class="bar"></span>
@@ -217,7 +263,7 @@ input:focus ~ .highlight {
                 <div class="right">
                     <div class="content">
                         <h2>Login</h2>
-                        <form action="javascript:void(0);" method="POST" >
+                        <form action="javascript:void(0);" method="POST" style="font-size: 12px;">
                             <div class="group">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" id="email" name="email" required/>
@@ -271,12 +317,11 @@ input:focus ~ .highlight {
                                             </div>
                                             
                                     </div>
-                                    <a class="modal-close" data-dismiss="modal">×</a>
                                 </div>
                         </div>
 				</div>
             </div>
-            <svg id="radar-circle"> 
+            <svg id="radar-circle" data-dismiss="modal"> 
                     <circle cx="50%" cy="50%" r="1004.49" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.1"> 
                      <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="0.15s"></animate> 
                     </circle> 
