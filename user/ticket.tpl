@@ -301,15 +301,11 @@
                             </div>
                             <div class="card-body text-warn" id="list">
                                 <div class="alert alert-info alert-with-icon" data-notify="container">
-                                    <button type="button"  class="close" data-dismiss="modal" aria-hidden="true">
-                                        <i class="now-ui-icons ui-1_simple-remove"></i>
-                                    </button>
+                                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                                     <span data-notify="message">111111111</span>
                                 </div>
                                 <div class="alert alert-info alert-with-icon" data-notify="container">
-                                    <button type="button"  class="close" data-dismiss="modal" aria-hidden="true">
-                                        <i class="now-ui-icons ui-1_simple-remove"></i>
-                                    </button>
+                                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                                     <span data-notify="message">2222222</span>
                                 </div>
                             </div>
