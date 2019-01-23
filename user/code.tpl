@@ -35,6 +35,27 @@
          .sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active > a{
             background-color: #ffe0e038;
         }
+        .card-heading{
+            display: none
+        }
+        .margin-bottom-no{
+            box-shadow:none
+        }
+        .btn,.waves-effect{
+            background: #fff;
+            padding: 0px;
+            margin: 6px;
+        }
+        .waves-effect:hover{
+            background: #fff
+        }
+        .alert.alert-danger{
+            cursor: pointer;
+        }
+        .alert.alert-danger:hover{
+            color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
+        }
         .pricing-button {
             border: 1px solid #9dd1ff;
             border-radius: 10px;
