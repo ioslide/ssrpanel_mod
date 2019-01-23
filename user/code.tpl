@@ -81,7 +81,30 @@
             .pricing-button.is-featured:active {
             background-color: #269aff;
             }
-        
+        .form-control{
+            border-radius: 0px
+        }
+        table{
+        table-layout:fixed;
+      }
+      td{
+        width:100%;
+        word-break:keep-all;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+        padding: 12px 0px;
+    vertical-align: middle;
+      }
+      .col-md-6{
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
         </style>
     </head>
     <body class="page-orange">
@@ -356,20 +379,14 @@
                                                             <table class="table">
                                                                 <thead class=" text-primary">
                                                                     <th>代码</th>
-                                                                    <th>类型</th>
                                                                     <th>操作</th>
                                                                     <th class="text-right">时间</th>
                                                                 </thead>
                                                                 {foreach $codes as $code}
                                                                 {if $code->type!=-2}
+                                                                <tbody>
                                                                     <tr>
                                                                             <td>{$code->code}</td>
-                                                                            {if $code->type==-1}
-                                                                                <td>金额充值</td>
-                                                                            {/if}
-                                                                            {if $code->type==10001}
-                                                                                <td>流量充值</td>
-                                                                            {/if}
                                                                             {if $code->type==10002}
                                                                                 <td>用户续期</td>
                                                                             {/if}
@@ -390,6 +407,7 @@
                                                                             {/if}
                                                                             <td>{$code->usedatetime}</td>
                                                                     </tr>
+                                                                </tbody>
                                                                 {/if}
                                                                 {/foreach}
                                                             </table>
