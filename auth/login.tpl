@@ -1,8 +1,45 @@
-{include file='header.tpl'}
+
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{$config["appName"]}</title>
+        <meta name="theme-color" content="#4285f4">
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <!--     Fonts and icons     -->
+
+        <link href="/theme/material/css/project.min.css" rel="stylesheet">
+        <link href="/theme/material/css/auth.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <!-- CSS Files -->
+        <link href="/theme/material/css/project.min.css" rel="stylesheet">
+        <link href="https://js.ioslide.com/ssr/bootstrap.css" rel="stylesheet" />
+        <link href="https://js.ioslide.com/ssr/assets/css/now-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="https://js.ioslide.com/ssr/assets/demo/demo.css" rel="stylesheet" />
+        <!-- mail-css -->
+        <link href="https://js.ioslide.com/ssr/mail.css" rel="stylesheet" />
+        <!-- alert-css-->
+        <link href="https://js.ioslide.com/ssr/alert.css" rel="stylesheet" />
+        <!--   Core JS Files   -->
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="https://js.ioslide.com/ssr/assets/js/core/popper.min.js"></script>
+        <script src="https://js.ioslide.com/ssr/assets/js/core/bootstrap.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
+        <!--  Google Maps Plugin    -->
+        <!-- Chart JS -->
+        <script src="https://js.ioslide.com/ssr/assets/js/plugins/chartjs.min.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="https://js.ioslide.com/ssr/assets/js/plugins/bootstrap-notify.js"></script>
+        <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="https://js.ioslide.com/ssr/assets/js/now-ui-dashboard.js?v=1.0.1"></script>
+        <!-- svg -->
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js'></script>
+
   <style>
   * { box-sizing:border-box; }
 /* form starting stylings ------------------------------- */
@@ -10,7 +47,9 @@
   position:relative; 
   margin-bottom:25px; 
 }
-
+.left .content label{
+    color:#fff
+}
 input:focus{ outline:none; }
 
 /* LABEL ======================================= */
@@ -109,7 +148,14 @@ input:focus ~ .highlight {
     box-shadow: none;
     margin-right: 10px;
 }
-
+@media only screen and (max-width: 767px){
+.left .content {
+    margin: 0 auto;
+    top: -webkit-calc(50% - 255px);
+    left: -webkit-calc(50% + 65px);
+    position: absolute;
+}
+}
   </style>
   </head>
 <body>
@@ -203,36 +249,55 @@ input:focus ~ .highlight {
 
 	<div aria-hidden="true" class="modal modal-va-middle fade" id="tos_modal" role="dialog" tabindex="-1">
 			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-heading">
-						<h2 class="modal-title">Register XHY</h2>
-					</div>
-					<div class="modal-inner">
-            <ul>
-              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Please provide a real email and keep it on your own. </font><font style="vertical-align: inherit;">The mailbox is the user's unique credentials.</font></font></li>
-              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This site encrypts and stores user passwords to ensure data security, but does not guarantee the absolute security of this information.</font></font></li>
-              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is forbidden to use this site service for any illegal and malicious activities.</font></font></li>
-              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The use of any node is subject to the relevant laws of the country in which the node is located and Chinese law.</font></font></li>
-              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is forbidden to abuse the services provided by this site.</font></font></li>
-              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">For free users, we reserve the right to delete the account without notice.</font></font></li>
-              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Any user who violates the Terms of Use, we will delete the offending account and withdraw the right to use the service.</font></font></li>
-            </ul>
-					</div>
-					<div class="modal-footer">
-						<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect"
-								data-dismiss="modal" type="button" id="cancel">Disagree</button>
-							<button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="reg"
-								type="button">Agree</button>
-						</p>
-					</div>
+				<div class="modal-content"> 
+                        <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-category">Register</h5>
+                                    <h4 class="card-title" style="color: #000;">注册事项</h4>
+                                </div>
+                                <div class="card-body text-warn" id="list">
+                                    <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;" >
+                                            <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                            <span data-notify="message" id="name">点击同意代表您已同意相关条例</span>
+                                        </div>
+                                    <div class="row">
+                                            <div class="col-md-4" >
+                                                    <p class="text-right">
+                                                            <button class="btn btn-flat btn-brand-accent waves-attach waves-effect"
+                                                                data-dismiss="modal" type="button" id="cancel">Disagree</button>
+                                                            <button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="reg"
+                                                                type="button">Agree</button>
+                                                        </p>
+                                            </div>
+                                            
+                                    </div>
+                                    <a class="modal-close" data-dismiss="modal">×</a>
+                                </div>
+                        </div>
 				</div>
-			</div>
+            </div>
+            <svg id="radar-circle"> 
+                    <circle cx="50%" cy="50%" r="1004.49" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.1"> 
+                     <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="0.15s"></animate> 
+                    </circle> 
+                    <circle cx="50%" cy="50%" r="870.286" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.2"> 
+                     <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="1.25s"></animate> 
+                    </circle> 
+                    <circle cx="50%" cy="50%" r="736.086" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.3"> 
+                     <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="2.35"></animate> 
+                    </circle> 
+                    <circle cx="50%" cy="50%" r="601.886" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.2"> 
+                     <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="3.45s"></animate> 
+                    </circle> 
+                    <circle cx="50%" cy="50%" r="467.686" fill-opacity="0" stroke="white" stroke-width="1px" stroke-opacity="0.1"> 
+                     <animate attributeName="r" from="0" to="1220" dur="10s" repeatCount="indefinite" begin="4.55s"></animate> 
+                    </circle> 
+            </svg>
 	</div>
 	
     <div class="tiphidden"></div>
 </body>
-
-
+</html>
 
 {include file='dialog.tpl'}
 
