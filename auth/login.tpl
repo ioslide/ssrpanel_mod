@@ -182,7 +182,9 @@
             position: absolute;
             width: 220px;
         }
-
+        .right .content label{
+            font-size: inherit
+        }
         .group input {
             width: 100%
         }
@@ -193,7 +195,9 @@
             box-shadow: none;
             margin-right: 10px;
         }
-
+        .modal-content{
+            padding: 0px 30px 0px 30px;
+        }
         @media only screen and (max-width: 767px) {
             .left .content {
                 margin: 0 auto;
