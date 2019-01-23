@@ -43,6 +43,16 @@
          .sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active > a{
         background-color: #ffffff38;
       }
+      table{
+        table-layout:fixed;
+      }
+      td{
+        width:100%;
+        word-break:keep-all;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
      </style>
 </head>
 <body class="page-orange">
