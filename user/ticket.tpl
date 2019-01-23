@@ -296,22 +296,20 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-category">Line speed</h5>
-                                <h4 class="card-title">System message</h4>
+                                <h5 class="card-category">System message</h5>
+                                <h4 class="card-title">系统信息</h4>
                             </div>
                             <div class="card-body text-warn" id="list">
                                 <div class="alert alert-info alert-with-icon" data-notify="container">
                                     <button type="button"  class="close" data-dismiss="modal" aria-hidden="true">
                                         <i class="now-ui-icons ui-1_simple-remove"></i>
                                     </button>
-                                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                                     <span data-notify="message">111111111</span>
                                 </div>
                                 <div class="alert alert-info alert-with-icon" data-notify="container">
                                     <button type="button"  class="close" data-dismiss="modal" aria-hidden="true">
                                         <i class="now-ui-icons ui-1_simple-remove"></i>
                                     </button>
-                                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                                     <span data-notify="message">2222222</span>
                                 </div>
                             </div>
@@ -333,16 +331,10 @@
                             </div>
                             <div class="card-body">
                                 <div class="alert alert-danger">
-                                    <button type="button" aria-hidden="true" class="close">
-                                        <i class="now-ui-icons ui-1_simple-remove"></i>
-                                    </button>
                                     <span>
                                         <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
                                 </div>
                                 <div class="alert alert-danger">
-                                    <button type="button" aria-hidden="true" class="close">
-                                        <i class="now-ui-icons ui-1_simple-remove"></i>
-                                    </button>
                                     <span>
                                         <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
                                 </div>
