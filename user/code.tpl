@@ -1,159 +1,402 @@
-
-
-
-
-{include file='user/main.tpl'}
-
-<main class="content">
-    <div class="content-header ui-content-header">
-        <div class="container">
-            <h1 class="content-heading">充值</h1>
-
-
-        </div>
-    </div>
-    <div class="container">
-        <section class="content-inner margin-top-no">
-            <div class="row">
-
-                <div class="col-lg-12 col-md-12">
-                    <div class="card margin-bottom-no">
-                        <div class="card-main">
-                            <div class="card-inner">
-                                <div class="card-inner">
-                                    <p class="card-heading">注意!</p>
-                                    <p>充值完成后需刷新网页以查看余额，通常一分钟内到账。</p>
-                                    {if $config["enable_admin_contact"] == 'true'}
-                                        <p class="card-heading">如果没有到账请立刻联系站长：</p>
-                                        {if $config["admin_contact1"]!=null}
-                                            <li>{$config["admin_contact1"]}</li>
-                                        {/if}
-                                        {if $config["admin_contact2"]!=null}
-                                            <li>{$config["admin_contact2"]}</li>
-                                        {/if}
-                                        {if $config["admin_contact3"]!=null}
-                                            <li>{$config["admin_contact3"]}</li>
-                                        {/if}
-                                    {/if}
-                                    <br/>
-                                    <p><i class="icon icon-lg">attach_money</i>当前余额：<font color="#399AF2" size="5">{$user->money}</font> 元</p>
-                                </div>
-                            </div>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{$config["appName"]}</title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <!-- CSS Files -->
+        <link href="/theme/material/css/project.min.css" rel="stylesheet">
+        <link href="https://js.ioslide.com/ssr/bootstrap.css" rel="stylesheet" />
+        <link href="https://js.ioslide.com/ssr/assets/css/now-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="https://js.ioslide.com/ssr/assets/demo/demo.css" rel="stylesheet" />
+        <!-- mail-css -->
+        <link href="https://js.ioslide.com/ssr/mail.css" rel="stylesheet" />
+        <!-- alert-css-->
+        <link href="https://js.ioslide.com/ssr/alert.css" rel="stylesheet" />
+        <!--   Core JS Files   -->
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://js.ioslide.com/ssr/assets/js/core/popper.min.js"></script>
+        <script src="https://js.ioslide.com/ssr/assets/js/core/bootstrap.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
+        <!--  Google Maps Plugin    -->
+        <!-- Chart JS -->
+        <script src="https://js.ioslide.com/ssr/assets/js/plugins/chartjs.min.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="https://js.ioslide.com/ssr/assets/js/plugins/bootstrap-notify.js"></script>
+        <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="https://js.ioslide.com/ssr/assets/js/now-ui-dashboard.js?v=1.0.1"></script>
+        <!-- svg -->
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js'></script>
+        <style>
+                    .sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active > a{
+            background-color: #ffe0e038;
+        }</style>
+    </head>
+    <body class="page-orange">
+        <div class="wrapper">
+                <div class="sidebar">
+                        <div class="logo">
+                            <a href="#" class="simple-text logo-mini">Hi</a>
+                            <a href="#" class="simple-text logo-normal">{$config["appName"]}</a>
                         </div>
-                    </div>
+                        <div class="sidebar-wrapper">
+                            <ul class="nav">
+                            {if $user->isAdmin()}
+                                <li class="active">
+                                        <a href="/admin">
+                                                <i class="now-ui-icons design_app"></i>
+                                                <p>管理面板</p>
+                                            </a>
+                                </li>
+                            {/if}
+                            {if $can_backtoadmin}
+                                <li>
+                                        <a href="/user/backtoadmin">
+                                            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                                            <p>返回管理员身份</p>
+                                        </a>
+                                <li>
+                            {/if}
+                                <li class="active">
+                                    <a href="/user">
+                                        <i class="now-ui-icons users_single-02"></i>
+                                        <p>用户中心</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/announcement">
+                                        <i class="now-ui-icons education_paper"></i>
+                                        <p>使用教程</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/profile">
+                                        <i class="now-ui-icons objects_diamond"></i>
+                                        <p>账户信息</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/edit">
+                                        <i class="now-ui-icons ui-2_settings-90"></i>
+                                        <p>资料编辑</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/ticket">
+                                        <i class="now-ui-icons ui-1_bell-53"></i>
+                                        <p>工单系统</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/node">
+                                        <i class="now-ui-icons objects_globe"></i>
+                                        <p>节点列表</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/trafficlog">
+                                        <i class="now-ui-icons business_chart-bar-32"></i>
+                                        <p>流量记录</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/detect/log">
+                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                        <p>审计记录</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/user/detect">
+                                        <i class="now-ui-icons travel_info"></i>
+                                        <p>审计规则</p>
+                                    </a>
+                                </li>
+                                <li>
+                                        <a href="/user/shop">
+                                            <i class="now-ui-icons business_money-coins"></i>
+                                            <p>套餐购买</p>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="/user/bought">
+                                            <i class="now-ui-icons shopping_tag-content"></i>
+                                            <p>购买记录</p>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="/user/code">
+                                            <i class="now-ui-icons shopping_shop"></i>
+                                            <p>充值中心</p>
+                                        </a>
+                                </li>
+                            {if $config['enable_donate']=='true'}
+                                <li>
+                                    <a href="/user/donate">
+                                        <i class="now-ui-icons business_badge"></i>
+                                        <p>捐赠公示</p>
+                                    </a>
+                                </li>
+                                {/if}
+                            {if $config['enable_telegram']=='true' && $config['telegram_grouplink']!='' }
+                            <li>
+                                    <a href="{$config['telegram_grouplink']}">
+                                        <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                                        <p>Telegram群组</p>
+                                    </a>
+                            </li>
+                            {/if}
+            
+                            </ul>
+                        </div>
                 </div>
-
-
-                {if $pmw!=''}
-                    <div class="col-lg-12 col-md-12">
-                        <div class="card margin-bottom-no">
-                            <div class="card-main">
-                                <div class="card-inner">
-                                    {$pmw}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {/if}
-
-                <div class="col-lg-12 col-md-12">
-                    <div class="card margin-bottom-no">
-                        <div class="card-main">
-                            <div class="card-inner">
-                                <div class="card-inner">
-                                    <div class="cardbtn-edit">
-											<div class="card-heading">充值码</div>
-											<button class="btn btn-flat waves-attach" id="code-update" ><span class="icon">favorite_border</span></button>
-									</div>
-                                    <div class="form-group form-group-label">
-                                        <label class="floating-label" for="code">充值码</label>
-                                        <input class="form-control maxwidth-edit" id="code" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-12 col-md-12">
-                    <div class="card margin-bottom-no">
-                        <div class="card-main">
-                            <div class="card-inner">
-                               
-                                    <div class="card-table">
-                                        <div class="table-responsive table-user">
-                                            {$codes->render()}
-                                            <table class="table table-hover">
-                                                <tr>
-                                                    <!--<th>ID</th> -->
-                                                    <th>代码</th>
-                                                    <th>类型</th>
-                                                    <th>操作</th>
-                                                    <th>使用时间</th>
-
-                                                </tr>
-                                                {foreach $codes as $code}
-                                                    {if $code->type!=-2}
-                                                        <tr>
-                                                            <!--	<td>#{$code->id}</td>  -->
-                                                            <td>{$code->code}</td>
-                                                            {if $code->type==-1}
-                                                                <td>金额充值</td>
-                                                            {/if}
-                                                            {if $code->type==10001}
-                                                                <td>流量充值</td>
-                                                            {/if}
-                                                            {if $code->type==10002}
-                                                                <td>用户续期</td>
-                                                            {/if}
-                                                            {if $code->type>=1&&$code->type<=10000}
-                                                                <td>等级续期 - 等级{$code->type}</td>
-                                                            {/if}
-                                                            {if $code->type==-1}
-                                                                <td>充值 {$code->number} 元</td>
-                                                            {/if}
-                                                            {if $code->type==10001}
-                                                                <td>充值 {$code->number} GB 流量</td>
-                                                            {/if}
-                                                            {if $code->type==10002}
-                                                                <td>延长账户有效期 {$code->number} 天</td>
-                                                            {/if}
-                                                            {if $code->type>=1&&$code->type<=10000}
-                                                                <td>延长等级有效期 {$code->number} 天</td>
-                                                            {/if}
-                                                            <td>{$code->usedatetime}</td>
-                                                        </tr>
-                                                    {/if}
-                                                {/foreach}
-                                            </table>
-                                            {$codes->render()}
+                <div class="main-panel">
+                        <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+                                <div class="container-fluid">
+                                    <div class="navbar-wrapper">
+                                        <div class="navbar-toggle">
+                                            <button type="button" class="navbar-toggler">
+                                                <span class="navbar-toggler-bar bar1"></span>
+                                                <span class="navbar-toggler-bar bar2"></span>
+                                                <span class="navbar-toggler-bar bar3"></span>
+                                            </button>
                                         </div>
+                                        <a class="navbar-brand" href="#pablo">商品列表</a>
                                     </div>
-                                
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                                        <form>
+                                            <div class="input-group no-border">
+                                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                                <span class="input-group-addon">
+                                                    <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                                </span>
+                                            </div>
+                                        </form>
+                                        <ul class="navbar-nav">
+                
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/user/node">
+                                                    <i class="now-ui-icons media-2_sound-wave"></i>
+                                                    <p>
+                                                        <span class="d-lg-none d-md-block">Stats</span>
+                                                    </p>
+                                                </a>
+                                            </li>
 
+                                            {if $user->isLogin}
+                                            <li class="nav-item">
+                                                <a class="nav-link dropdown-toggle" href="#pablo" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="now-ui-icons users_single-02"></i>
+                                                    <p>
+                                                        <span class="d-lg-none d-md-block">Account</span>
+                                                    </p>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                                    <a class="dropdown-item" href="/user/profile">账户中心</a>
+                                                    <a class="dropdown-item" href="/user/profile">充值中心</a>
+                                                    <a class="dropdown-item" href="/user/logout">注销&nbsp;{$user->user_name}</a>
+                                                </div>
+                                            </li>
+                                            {else}
+                                            <li class="nav-item">
+                                                <a class="nav-link dropdown-toggle" href="#pablo" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="now-ui-icons users_single-02"></i>
+                                                    <p>
+                                                        <span class="d-lg-none d-md-block">Account</span>
+                                                    </p>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                                    <a class="dropdown-item" href="/auth/login">登陆</a>
+                                                    <a class="dropdown-item" href="/auth/register">注册</a>
+                                                </div>
+                                            </li>
+                                            {/if}
+                                        </ul>
+                                    </div>
+                                </div>
+                        </nav>    
+                        <!-- End Navbar -->
+                        <div class="panel-header">
+                                <div class="header text-center">
+                                    <h2 class="title">Product list</h2>
+                                    <p class="category">Send to
+                                        <a target="_blank" href="#">XHY</a>system
+                                    </p>
+                                </div>
+                        </div>   
+                        <div class="content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5 class="card-category">Matters needing attention</h5>
+                                                    <h4 class="card-title">当前余额:{$user->money}</h4>
+                                                </div>
+                                                <div class="card-body text-warn" id="list">
+                                                    <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;">
+                                                        <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                        <span data-notify="message">商品不可叠加，新购商品会覆盖旧商品</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                    <div class="card-header">
+                                                            <h5 class="card-category">wxpay/alipay</h5>
+                                                            <h4 class="card-title">微信/支付宝</h4>
+                                                    </div>
+                                                        {if $pmw!=''}
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <div class="card margin-bottom-no">
+                                                                <div class="card-main">
+                                                                    <div class="card-inner">
+                                                                        {$pmw}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      {/if}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                                <div class="card">
+                                                        <div class="card-header">
+                                                                <h5 class="card-category">Matters needing attention</h5>
+                                                                <h4 class="card-title">充值码</h4>
+                                                            </div>
+                                                        <div class="card-body text-warn">
+                                                                <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;">
+                                                                        <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                                        <label class="floating-label" for="code"></label>
+                                                                        <input class="form-control" id="code" type="text">
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <button class="alert alert-danger" data-dismiss="modal" id="code-update" style="width: 100%;">OK</button>
+                                                                        </div>
+                                                                </div>
+                                                                <a class="modal-close" data-dismiss="modal">×</a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="places-buttons">
+                                                        <div class="row">
+                                                            <div class="col-md-6 ml-auto mr-auto text-center">
+                                                                <h4 class="card-title">
+                                                                            充值记录
+                                                                    <p class="category">Recharge record</p>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>    
+                                                    <div class="table-responsive">
+                                                        {$codes->render()}
+                                                            <table class="table">
+                                                                <thead class=" text-primary">
+                                                                    <th>代码</th>
+                                                                    <th>类型</th>
+                                                                    <th>操作</th>
+                                                                    <th class="text-right">时间</th>
+                                                                </thead>
+                                                                {foreach $codes as $code}
+                                                                {if $code->type!=-2}
+                                                                    <tr>
+                                                                            <td>{$code->code}</td>
+                                                                            {if $code->type==-1}
+                                                                                <td>金额充值</td>
+                                                                            {/if}
+                                                                            {if $code->type==10001}
+                                                                                <td>流量充值</td>
+                                                                            {/if}
+                                                                            {if $code->type==10002}
+                                                                                <td>用户续期</td>
+                                                                            {/if}
+                                                                            {if $code->type>=1&&$code->type<=10000}
+                                                                                <td>等级续期 - 等级{$code->type}</td>
+                                                                            {/if}
+                                                                            {if $code->type==-1}
+                                                                                <td>充值 {$code->number} 元</td>
+                                                                            {/if}
+                                                                            {if $code->type==10001}
+                                                                                <td>充值 {$code->number} GB 流量</td>
+                                                                            {/if}
+                                                                            {if $code->type==10002}
+                                                                                <td>延长账户有效期 {$code->number} 天</td>
+                                                                            {/if}
+                                                                            {if $code->type>=1&&$code->type<=10000}
+                                                                                <td>延长等级有效期 {$code->number} 天</td>
+                                                                            {/if}
+                                                                            <td>{$code->usedatetime}</td>
+                                                                    </tr>
+                                                                {/if}
+                                                                {/foreach}
+                                                            </table>
+                                                        {$codes->render()}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div aria-hidden="true" class="modal modal-va-middle fade" id="readytopay" role="dialog" tabindex="-1">
+                                                    <div class="modal-dialog modal-xs">
+                                                        <div class="modal-content">
+                                                            <div class="modal-heading">
+                                                                <a class="modal-close" data-dismiss="modal">×</a>
+                                                                <h2 class="modal-title">正在连接支付网关</h2>
+                                                            </div>
+                                                            <div class="modal-inner">
+                                                                <p id="title">感谢您对我们的支持，请耐心等待</p>
+                                                                {if $config["payment_system"] != "trimepay"}
+                                                                {/if}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                            {include file='dialog.tpl'}
+                                    </div>
+                                </div>
+                        </div> 
+                <footer class="footer">
+                        <div class="container-fluid">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            About Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Blog
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="copyright">
+                                &copy;
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>XHY</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div aria-hidden="true" class="modal modal-va-middle fade" id="readytopay" role="dialog" tabindex="-1">
-                    <div class="modal-dialog modal-xs">
-                        <div class="modal-content">
-                            <div class="modal-heading">
-                                <a class="modal-close" data-dismiss="modal">×</a>
-                                <h2 class="modal-title">正在连接支付网关</h2>
-                            </div>
-                            <div class="modal-inner">
-                                <p id="title">感谢您对我们的支持，请耐心等待</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {include file='dialog.tpl'}
-            </div>
-        </section>
-    </div>
-</main>
+                </footer>    
+        </div>
+</body>
 <script>
 	$(document).ready(function () {
 		$("#code-update").click(function () {
@@ -183,10 +426,4 @@
 		})
 })
 </script>
-
-
-
-
-
-
 {include file='user/footer.tpl'}
