@@ -8,8 +8,8 @@
 ssrpanel_mod
 	
 [![Build Status](https://travis-ci.org/philc/vimium.svg?branch=master)](https://xhy.im)
-[![License](https://img.shields.io/npm/l/mithril.svg)](https://xhy.im/legal-notice/index.html)
-[![downloads](http://img.shields.io/npm/dm/antd.svg?style=flat-square)](https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/)
+[![License](https://img.shields.io/github/license/ssrpanel/SSRPanel.svg)](https://xhy.im/legal-notice/index.html)
+[![downloads](https://img.shields.io/github/downloads/ioslide/ssrpanel_mod/total.svg)](https://github.com/ioslide/ssrpanel_mod/releases)
 
 </div>
 
@@ -30,13 +30,9 @@ ssrpanel_mod
 
 ## 💎 特点
 A succinct, fast and elegant Airport
-
 ## 📦 安装
-<p align="left">
-  <a href="#">
-    <img width="150" src="https://my20889938-1255793964.cos.ap-chengdu.myqcloud.com/open-in-broswer.svg">
-  </a>
-</p>
+[![downloads](https://img.shields.io/github/downloads/ioslide/ssrpanel_mod/total.svg)](https://github.com/ioslide/ssrpanel_mod/releases)
+
 
 ### 建立环境
 
