@@ -34,8 +34,6 @@ A succinct, fast and elegant Airport
 ## 📦 Installation
 [![downloads](https://img.shields.io/github/downloads/ioslide/ssrpanel_mod/total.svg)](https://github.com/ioslide/ssrpanel_mod/releases)
 
-
-
 ### Setting up the environment
 
 ```html
