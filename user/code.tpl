@@ -98,6 +98,12 @@
         padding: 12px 0px;
     vertical-align: middle;
       }
+      .col-md-6 .card .card-body{
+        padding: 0px 15px 0px 15px;
+      }
+      .content .row .col-md-6 .card .col-lg-12{
+        padding-bottom: 8px;
+      }
         </style>
     </head>
     <body class="page-orange">
@@ -342,7 +348,7 @@
                                                             </div>
                                                         <div class="card-body text-warn">
                                                                 <div class="alert alert-info alert-with-icon" data-notify="container" style="text-align: left;">
-                                                                        <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                                                                        <span data-notify="icon" class="now-ui-icons shopping_tag-content"></span>
                                                                         <input class="form-control" id="code" type="text" style="border-radius: 0px;">
                                                                 </div>
                                                                 <div class="row">
