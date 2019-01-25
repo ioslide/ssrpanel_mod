@@ -10,7 +10,7 @@
         <!-- CSS Files -->
         <link href="/theme/material/css/project.min.css" rel="stylesheet">
         <link href="https://js.ioslide.com/ssr/bootstrap.css" rel="stylesheet" />
-        <link href="https://js.ioslide.com/ssr/assets/css/now-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
+        <link href="/theme/material/css/now-ui-dashboard.css" rel="stylesheet" />
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="https://js.ioslide.com/ssr/assets/demo/demo.css" rel="stylesheet" />
         <!-- mail-css -->
@@ -97,13 +97,6 @@
       .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
         padding: 12px 0px;
     vertical-align: middle;
-      }
-      .col-md-6{
-        position: relative;
-        width: 100%;
-        min-height: 1px;
-        padding-right: 5px;
-        padding-left: 5px;
       }
         </style>
     </head>
@@ -235,7 +228,7 @@
                                                 <span class="navbar-toggler-bar bar3"></span>
                                             </button>
                                         </div>
-                                        <a class="navbar-brand" href="#pablo">商品列表</a>
+                                        <a class="navbar-brand" href="#pablo">充值中心</a>
                                     </div>
                                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                                         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -297,7 +290,7 @@
                         <!-- End Navbar -->
                         <div class="panel-header">
                                 <div class="header text-center">
-                                    <h2 class="title">Product list</h2>
+                                    <h2 class="title">Voucher Center</h2>
                                     <p class="category">Send to
                                         <a target="_blank" href="#">XHY</a>system
                                     </p>
@@ -305,8 +298,8 @@
                         </div>   
                         <div class="content">
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="col-md-6">
+
+                                        <div class="col-md-12">
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h5 class="card-category">Matters needing attention</h5>
@@ -361,7 +354,7 @@
                                                 </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="places-buttons">
@@ -469,8 +462,7 @@
                                                 </circle> 
                                                 </svg> 
                                             </div> 
-     
-                                    </div>
+
                                 </div>
                         </div> 
                 <footer class="footer">
