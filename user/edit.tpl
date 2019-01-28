@@ -34,15 +34,30 @@
         <script src='http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js'></script>
         <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-        
-    <style>.kaobei {
+    <style>
+    .kaobei {
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;
     }
     .kaobei:hover {
         background-color: #ff7ffe; /* prink */
         color: white;
-    }</style>
+    }
+    #pac{
+        height: 6rem;
+        border: 1px solid #ff000063;
+    }
+    #pac:hover{
+        border: 1px solid #ff0000ba;
+    }
+    #pac:focus{
+        border: 1px solid #ff0000ba;
+    }
+    .form-control{
+        border-radius: 0px;
+        height: calc(2.25rem + 2px);
+    }
+    </style>
     </head>
     <body class="page-orange">
         <div class="wrapper ">
@@ -239,53 +254,6 @@
                         </div>
                 <div class="content">
                     <div class="row">
-                            <div class="col-md-12">
-                                    <div class="card">
-                                    <div class="card-header">
-                                                <h5 class="card-category">Matters needing attention</h5>
-                                                <h4 class="card-title">协议&混淆设置</h4>
-                                    </div>
-                                    <div class="col-md-6">
-                                                <p>当前协议：<code id="ajax-user-protocol">{$user->protocol}</code></p>
-                                                <div class="form-group form-group-label">
-                                                    <label class="floating-label" for="protocol">协议</label>
-                                                    <select id="protocol" class="form-control">
-                                                        {$protocol_list = $config_service->getSupportParam('protocol')}
-                                                        {foreach $protocol_list as $protocol}
-                                                            <option value="{$protocol}" {if $user->protocol == $protocol}selected="selected"{/if}>[{if URL::CanProtocolConnect($protocol) == 3}SS/SSD/SSR{else}SSR{/if} 可连接] {$protocol}</option>
-                                                        {/foreach}
-                                                    </select>
-                                                </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                                <p>当前混淆方式：<code id="ajax-user-obfs">{$user->obfs}</code></p>
-                                                <div class="form-group form-group-label">
-                                                    <label class="floating-label" for="obfs">混淆方式</label>
-                                                    <select id="obfs" class="form-control">
-                                                        {$obfs_list = $config_service->getSupportParam('obfs')}
-                                                        {foreach $obfs_list as $obfs}
-                                                            <option value="{$obfs}" {if $user->obfs == $obfs}selected="selected"{/if}>[{if URL::CanObfsConnect($obfs) >= 3}SS/SSD/SSR{else}{if URL::CanObfsConnect($obfs) == 1}SSR{else}SS/SSD{/if}{/if} 可连接] {$obfs}</option>
-                                                        {/foreach}
-                                                    </select>
-                                                </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                                <p>当前混淆参数：<code id="ajax-user-obfs-param">{$user->obfs_param}</code></p>
-                                                <div class="form-group form-group-label">
-                                                    <label class="floating-label" for="obs-param">在这输入混淆参数</label>
-                                                    <input class="form-control" id="obfs-param" type="text">
-                                                </div>
-                                    </div>
-                                            
-                                    <div class="row">
-                                            <div class="ml-auto mr-auto">
-                                                <button class="btn btn-primary btn-block" id="ssr-update">提交</button>
-                                            </div>
-                                    </div>
-                                </div>
-                                </div>  
                                         <div class="col-md-6">
                                             <div class="card">
                                             <div class="card-header">
@@ -322,7 +290,7 @@
                                                         <h5 class="card-category">Matters needing attention</h5>
                                                         <h4 class="card-title">联络方式修改</h4>
                                                 </div>
-                                                <div class="card-body">
+                                                <div class="card-body" style="margin-top: 3rem;">
                                                         <p>联络方式：
                                                         <code id="ajax-im">
                                                         {if $user->im_type==1}
@@ -414,8 +382,6 @@
                                                     </div>
                                             </div>
                                         </div>  
-
-
                                         <div class="col-md-6">
                                             <div class="card">
                                                     <div class="card-header">
@@ -463,6 +429,53 @@
                                                         </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                    <div class="card">
+                                                    <div class="card-header">
+                                                                <h5 class="card-category">Matters needing attention</h5>
+                                                                <h4 class="card-title">协议&混淆设置</h4>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                                <p>当前协议：<code id="ajax-user-protocol">{$user->protocol}</code></p>
+                                                                <div class="form-group form-group-label">
+                                                                    <label class="floating-label" for="protocol">协议</label>
+                                                                    <select id="protocol" class="form-control">
+                                                                        {$protocol_list = $config_service->getSupportParam('protocol')}
+                                                                        {foreach $protocol_list as $protocol}
+                                                                            <option value="{$protocol}" {if $user->protocol == $protocol}selected="selected"{/if}>[{if URL::CanProtocolConnect($protocol) == 3}SS/SSD/SSR{else}SSR{/if} 可连接] {$protocol}</option>
+                                                                        {/foreach}
+                                                                    </select>
+                                                                </div>
+                                                    </div>
+                
+                                                    <div class="col-md-6">
+                                                                <p>当前混淆方式：<code id="ajax-user-obfs">{$user->obfs}</code></p>
+                                                                <div class="form-group form-group-label">
+                                                                    <label class="floating-label" for="obfs">混淆方式</label>
+                                                                    <select id="obfs" class="form-control">
+                                                                        {$obfs_list = $config_service->getSupportParam('obfs')}
+                                                                        {foreach $obfs_list as $obfs}
+                                                                            <option value="{$obfs}" {if $user->obfs == $obfs}selected="selected"{/if}>[{if URL::CanObfsConnect($obfs) >= 3}SS/SSD/SSR{else}{if URL::CanObfsConnect($obfs) == 1}SSR{else}SS/SSD{/if}{/if} 可连接] {$obfs}</option>
+                                                                        {/foreach}
+                                                                    </select>
+                                                                </div>
+                                                    </div>
+                
+                                                    <div class="col-md-6">
+                                                                <p>当前混淆参数：<code id="ajax-user-obfs-param">{$user->obfs_param}</code></p>
+                                                                <div class="form-group form-group-label">
+                                                                    <label class="floating-label" for="obs-param">在这输入混淆参数</label>
+                                                                    <input class="form-control" id="obfs-param" type="text">
+                                                                </div>
+                                                    </div>
+                                                            
+                                                    <div class="row">
+                                                            <div class="ml-auto mr-auto">
+                                                                <button class="btn btn-primary btn-block" id="ssr-update">提交</button>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                </div>  
                                         {if {$Block} == "被封"}
                                         <div class="col-md-6">
                                             <div class="card">
@@ -522,7 +535,7 @@
                                             <div class="card">
                                                     <div class="card-body">
                                                         <p class="card-heading"><a href="https://adblockplus.org/zh_CN/filters">自定义ACL/PAC/Surge</a></p>
-                                                        <p>IP 段格式表示 |127.0.0.0/8 </p>
+                                                        <p>IP 段格式表示 127.0.0.0/8 </p>
                                                         <div class="form-group form-group-label">
                                                             <label class="floating-label" for="pac">规则书写区</label>
                                                             <textarea class="form-control" id="pac" rows="8">{$user->pac}</textarea>
