@@ -194,7 +194,7 @@
                                                 <span class="navbar-toggler-bar bar3"></span>
                                             </button>
                                         </div>
-                                        <a class="navbar-brand" href="#pablo">节点列表</a>
+                                        <a class="navbar-brand" href="#pablo">资料编辑</a>
                                     </div>
                                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                                         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -246,7 +246,7 @@
                         </nav>
                         <div class="panel-header">
                                 <div class="header text-center">
-                                    <h2 class="title">Voucher Center</h2>
+                                    <h2 class="title">Data editing</h2>
                                     <p class="category">Send to
                                         <a target="_blank" href="#">XHY</a>system
                                     </p>
